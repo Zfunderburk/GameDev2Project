@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ToDoList : MonoBehaviour 
 {
+	//Make camera move faster
+
 	//Character movement Script
 		//attack 
 		//move

@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 	public float moveSpeed = 5f;
 
 	private float zoom;
-	public float zoomSpeed = 2;
+	public float zoomSpeed = 1;
 
 	public float zoomMin = -2f;
 	public float zoomMax = -10f;
@@ -33,8 +33,15 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		zoom += Input.GetAxis ("Mouse ScrollWheel") * zoomSpeed; 
-		//change this so that it is the up and down on the DPad
+		if (Input.GetButton("DPD"))
+		{
+			zoom -= zoom + zoomSpeed;
+		}
+		if (Input.GetButton("DPUP"))
+		{
+			zoom += zoom - zoomSpeed;
+		}
+
 
 		if (zoom > zoomMin)
 		{
@@ -47,17 +54,22 @@ public class PlayerMovement : MonoBehaviour
 
 		playerCam.transform.localPosition = new Vector3 (0, 0, zoom);
 
-		if (Input.GetMouseButton (1))
-			//Input.GetButton or Joystick button right joystick this is moving the camera
+
+		if (Input.GetAxis("RightJoyLR") < 0 ||Input.GetAxis("RightJoyLR") > 0 )
 		{
-			mouseX += Input.GetAxis ("Mouse X");
-			//hopefully same just changed to the right joystick 
-			mouseY += Input.GetAxis ("Mouse Y");
+			mouseX += Input.GetAxis ("RightJoyLR");
 			//changing this to being -= will invert the control
 		}
+		if (Input.GetAxis ("RightJoyUD") < 0 || Input.GetAxis ("RightJoyUD") > 0) 
+		{
+			mouseY += Input.GetAxis ("RightJoyUD");
+			//changing this to being -= will invert the control
+		}
+		//This is to control the camera using the right stick of a controller
 
 		mouseY = Mathf.Clamp (mouseY, -60f, 60f);
 		//so that when you look all the way up or down you do not switch to the other 
+
 		playerCam.LookAt (centerPoint);
 		centerPoint.localRotation = Quaternion.Euler (mouseY, mouseX, 0);
 
