@@ -8,10 +8,9 @@ public class ToDoList : MonoBehaviour
 
 	//Character movement Script
 		//attack 
-		//move
 		//dodge
+		//camera lock on
 		//take dmg
-		//victory?
 	//boss script
 		//under half health phase 2 (insert evil laugh)
 		//attack
@@ -21,7 +20,7 @@ public class ToDoList : MonoBehaviour
 	//UI will need player health bar maybe stamina if we add in a stamina
 	//UI will have boss health bar
 
-
+	//Make it so you can not enter arena without having a weapon
 
 
 	//Milestones
