@@ -12,9 +12,9 @@ public class InputHandler : MonoBehaviour
 
 	StateManager states;
 
-		CameraManager camManager;
+	CameraManager camManager;
 
-		float delta;
+	float delta;
 
 	void Start () 
 	{

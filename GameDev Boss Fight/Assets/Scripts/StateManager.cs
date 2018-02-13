@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AP
 {
-	
+	//Time 51.02 on part 2
 
 public class StateManager : MonoBehaviour 
 	{
@@ -16,6 +16,7 @@ public class StateManager : MonoBehaviour
 		[Header("Stats")]
 		public float moveSpeed = 2f;
 		public float runSpeed = 3.5f;
+		public float rotateSpeed = 5;
 
 		[Header("States")]
 		public bool run;
@@ -79,6 +80,12 @@ public class StateManager : MonoBehaviour
 			}
 
 			myBody.velocity = moveDir * (targetSpeed * moveAmount);
+			HandleMovementAnimations ();
+		}
+
+		void HandleMovementAnimations()
+		{
+			anim.SetFloat ("Vertical", moveAmount, 0.4f, delta);
 		}
 
 	}
