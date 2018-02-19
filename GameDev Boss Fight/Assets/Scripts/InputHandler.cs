@@ -32,12 +32,10 @@ public class InputHandler : MonoBehaviour
 		GetInput ();
 		UpdateStates ();
 		states.FixedTick (delta);
-	}
-
-	void Update()
-	{			
 		camManager.Tick (delta);
 	}
+
+
 
 	void GetInput()
 	{

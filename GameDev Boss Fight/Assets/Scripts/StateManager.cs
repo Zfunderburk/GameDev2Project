@@ -80,6 +80,18 @@ public class StateManager : MonoBehaviour
 			}
 
 			myBody.velocity = moveDir * (targetSpeed * moveAmount);
+<<<<<<< Updated upstream
+=======
+
+			Vector3 targetDir = moveDir;
+			if (targetDir == Vector3.zero)
+			{
+				targetDir = transform.forward;
+			}
+			Quaternion tr = Quaternion.LookRotation (targetDir);
+			Quaternion targetrotation = Quaternion.Slerp (transform.rotation, tr, delta * moveAmount * rotateSpeed);
+
+>>>>>>> Stashed changes
 			HandleMovementAnimations ();
 		}
 
