@@ -249,6 +249,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 03d16faac100d456fb8825be47ea40bb, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03d16faac100d456fb8825be47ea40bb, type: 3}
   m_IsPrefabParent: 0
@@ -368,6 +372,10 @@ MonoBehaviour:
   horizontal: 0
   moveAmount: 0
   moveDir: {x: 0, y: 0, z: 0}
+  rt: 0
+  rb: 0
+  lt: 0
+  lb: 0
   moveSpeed: 3.5
   runSpeed: 5.5
   rotateSpeed: 9
@@ -375,6 +383,8 @@ MonoBehaviour:
   run: 0
   onGround: 0
   lockOn: 0
+  inAction: 0
+  canMove: 0
   activeModel: {fileID: 0}
   anim: {fileID: 0}
   myBody: {fileID: 0}
@@ -572,6 +582,10 @@ MonoBehaviour:
   horizontal: 0
   moveAmount: 0
   moveDir: {x: 0, y: 0, z: 0}
+  rt: 0
+  rb: 0
+  lt: 0
+  lb: 0
   moveSpeed: 3
   runSpeed: 3.5
   rotateSpeed: 5
@@ -579,6 +593,8 @@ MonoBehaviour:
   run: 0
   onGround: 0
   lockOn: 0
+  inAction: 0
+  canMove: 0
   activeModel: {fileID: 776449634}
   anim: {fileID: 776449635}
   myBody: {fileID: 927360138}

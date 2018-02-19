@@ -6,52 +6,77 @@ namespace AP
 {
 	
 
-public class InputHandler : MonoBehaviour
-{
-	float vertical, horizontal;
-
-		bool runInput;
-
-	StateManager states;
-
-	CameraManager camManager;
-
-	float delta;
-
-	void Start () 
+	public class InputHandler : MonoBehaviour
 	{
+		float vertical, horizontal;
+
+		bool b_input;
+		bool a_input;
+		bool x_input;
+		bool y_input;
+
+		bool rb_input;
+		float rt_axis;
+		bool rt_input;
+		bool lb_input;
+		float lt_axis;
+		bool lt_input;
+
+		StateManager states;
+			
+		CameraManager camManager;
+
+		float delta;
+
+		void Start () 
+		{
 			states = GetComponent<StateManager> ();
 			states.Init ();
 
 			camManager = CameraManager.singleton;
 			camManager.Init (this.transform);
-	}
+		}
 
 
-	void FixedUpdate()
-	{
-		delta = Time.fixedDeltaTime;
-		GetInput ();
-		UpdateStates ();
-		states.FixedTick (delta);
-		camManager.Tick (delta);
-	}
+		void FixedUpdate()
+		{
+			delta = Time.fixedDeltaTime;
+			GetInput ();
+			UpdateStates ();
+			states.FixedTick (delta);
+			camManager.Tick (delta);
+		}
 
-	void Update()
-	{			
-		delta = Time.deltaTime;
-		states.Tick (delta);		
-	}
+		void Update()
+		{			
+			delta = Time.deltaTime;
+			states.Tick (delta);		
+		}
 
-	void GetInput()
-	{
-		vertical = Input.GetAxis ("Vertical");
-		horizontal = Input.GetAxis ("Horizontal");
-		runInput = Input.GetButton ("RunInput");
-	}
+		void GetInput()
+		{
+			vertical = Input.GetAxis ("Vertical");
+			horizontal = Input.GetAxis ("Horizontal");
+			b_input = Input.GetButton ("b_input");
+			rt_input = Input.GetButton ("RT"); 
+			rt_axis = Input.GetAxis("RT");
+			if (rt_axis != 0)
+			{
+				rt_input = true;
+			}
 
-	void UpdateStates () 
-	{
+			lt_input = Input.GetButton ("LT");
+			lt_axis = Input.GetAxis ("LT");
+			if (lt_axis!= 0)
+			{
+				lt_input = true;
+			}
+
+
+		}
+
+		void UpdateStates () 
+		{
 			states.horizontal = horizontal;
 			states.vertical = vertical;
 		
@@ -62,7 +87,7 @@ public class InputHandler : MonoBehaviour
 			float m = Mathf.Abs (horizontal) + Mathf.Abs (vertical);
 			states.moveAmount = Mathf.Clamp01 (m);
 
-			if (runInput)
+			if (b_input)
 			{
 				states.run = (states.moveAmount > 0);
 			}
@@ -70,7 +95,11 @@ public class InputHandler : MonoBehaviour
 			{
 				states.run = false;
 			}
+			states.rt = rt_input;
+			states.rb = rb_input;
+			states.lt = lt_input;
+			states.lb = lb_input;
 
+		}
 	}
-}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AP
 {
-	//Time 51.02 on part 2
+	//Time first half on part 3
 
 public class StateManager : MonoBehaviour 
 	{
@@ -12,6 +12,7 @@ public class StateManager : MonoBehaviour
 		public float vertical, horizontal;
 		public float moveAmount;
 		public Vector3 moveDir;
+		public bool rt, rb, lt, lb;
 
 		[Header("Stats")]
 		public float moveSpeed = 2f;
@@ -23,6 +24,8 @@ public class StateManager : MonoBehaviour
 		public bool run;
 		public bool onGround;
 		public bool lockOn;
+		public bool inAction;
+		public bool canMove;
 
 		public GameObject activeModel;
 		public Animator anim;
@@ -31,6 +34,8 @@ public class StateManager : MonoBehaviour
 		public float delta;
 
 		public LayerMask ignoreLayers;
+
+		float _actionDelay;
 
 		public void Init()
 		{
@@ -70,6 +75,32 @@ public class StateManager : MonoBehaviour
 		public void FixedTick(float d)
 		{
 			delta = d;
+	
+			DetectAction ();
+
+			if (inAction)
+			{
+				_actionDelay += delta;
+				if(_actionDelay > 0.3f)
+				{
+					inAction = false;
+					_actionDelay = 0;
+				}
+				else
+				{
+					return;
+				}
+
+			}
+				
+
+			canMove = anim.GetBool ("canMove");
+
+			if(!canMove)
+			{
+				return;
+			}
+
 			//myBody.drag = (moveAmount > 0|| onGround ==false) ? 0 : 4; this is the same as the if else underneath
 			if (moveAmount > 0|| onGround == false)
 			{
@@ -111,6 +142,34 @@ public class StateManager : MonoBehaviour
 
 
 			HandleMovementAnimations ();
+		}
+
+		public void DetectAction()
+		{
+			if (canMove == false)
+				return;
+			
+			if (rb == false && rt == false && lb == false && lt == false)
+				return;
+
+			string targetAnim = null;
+
+			if(rb)
+				targetAnim = "oh_attack_1";
+			if(rt)
+				targetAnim = "oh_attack_2";
+			if(lb)
+				targetAnim = "oh_attack_3";
+			if(lt)
+				targetAnim = "th_attack_1";
+
+			if (string.IsNullOrEmpty (targetAnim))
+				return;
+
+			canMove = false;
+			inAction = true;
+			anim.CrossFade (targetAnim, 0.2f);
+			myBody.velocity = Vector3.zero;
 		}
 
 		public void Tick(float d)
