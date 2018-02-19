@@ -10,6 +10,8 @@ public class InputHandler : MonoBehaviour
 {
 	float vertical, horizontal;
 
+		bool runInput;
+
 	StateManager states;
 
 	CameraManager camManager;
@@ -35,18 +37,24 @@ public class InputHandler : MonoBehaviour
 		camManager.Tick (delta);
 	}
 
-
+	void Update()
+	{			
+		delta = Time.deltaTime;
+		states.Tick (delta);		
+	}
 
 	void GetInput()
 	{
 		vertical = Input.GetAxis ("Vertical");
 		horizontal = Input.GetAxis ("Horizontal");
+		runInput = Input.GetButton ("RunInput");
 	}
-	// Update is called once per frame
+
 	void UpdateStates () 
 	{
 			states.horizontal = horizontal;
 			states.vertical = vertical;
+		
 
 			Vector3 v = vertical * camManager.transform.forward;
 			Vector3 h = horizontal * camManager.transform.right;
@@ -54,6 +62,14 @@ public class InputHandler : MonoBehaviour
 			float m = Mathf.Abs (horizontal) + Mathf.Abs (vertical);
 			states.moveAmount = Mathf.Clamp01 (m);
 
+			if (runInput)
+			{
+				states.run = (states.moveAmount > 0);
+			}
+			else
+			{
+				states.run = false;
+			}
 
 	}
 }

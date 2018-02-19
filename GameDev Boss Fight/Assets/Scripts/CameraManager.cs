@@ -61,7 +61,7 @@ namespace AP
 		void FollowTarget(float d)
 		{
 			float speed = d * followSpeed;
-			Vector3 targetPosition = Vector3.Lerp (transform.position, target.position, d);
+			Vector3 targetPosition = Vector3.Lerp (transform.position, target.position, speed);
 			transform.position = targetPosition;
 		}
 
