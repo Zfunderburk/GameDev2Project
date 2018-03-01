@@ -401,12 +401,12 @@ MonoBehaviour:
   character: {fileID: 90680637}
   centerPoint: {fileID: 1905430866}
   mouseSensitivity: 10
-  mouseYPosition: 1
-  moveSpeed: 5
-  zoomSpeed: 2
+  mouseYPosition: 1.5
+  moveSpeed: 7
+  zoomSpeed: 1
   zoomMin: -2
   zoomMax: -10
-  rotationSpeed: 5
+  rotationSpeed: 10
 --- !u!1 &1765359424
 GameObject:
   m_ObjectHideFlags: 0
