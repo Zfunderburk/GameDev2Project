@@ -15,12 +15,12 @@ namespace AP
 		bool x_input;
 		bool y_input;
 
-		bool rb_input;
+		/*bool rb_input;
 		float rt_axis;
 		bool rt_input;
 		bool lb_input;
 		float lt_axis;
-		bool lt_input;
+		bool lt_input;*/
 
 		StateManager states;
 			
@@ -58,8 +58,17 @@ namespace AP
 			vertical = Input.GetAxis ("Vertical");
 			horizontal = Input.GetAxis ("Horizontal");
 			b_input = Input.GetButton ("b_input");
-			rt_input = Input.GetButton ("RT"); 
+			a_input = Input.GetButton ("a_input");
+			x_input = Input.GetButton ("x_input");
+			y_input = Input.GetButton ("y_input");
+
+
+
+
+
+			/*rt_input = Input.GetButton ("RT"); //button and axis so keyboard or controller
 			rt_axis = Input.GetAxis("RT");
+
 			if (rt_axis != 0)
 			{
 				rt_input = true;
@@ -72,7 +81,7 @@ namespace AP
 				lt_input = true;
 			}
 
-
+			Debug.Log (rt_input);*/
 		}
 
 		void UpdateStates () 
@@ -95,10 +104,13 @@ namespace AP
 			{
 				states.run = false;
 			}
-			states.rt = rt_input;
-			states.rb = rb_input;
-			states.lt = lt_input;
-			states.lb = lb_input;
+			//states.rt = rt_input;
+			//states.rb = rb_input;
+			//states.lt = lt_input;
+			//states.lb = lb_input;
+			states.a = a_input;
+			states.x = x_input;
+			states.y = y_input;
 
 		}
 	}
