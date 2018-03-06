@@ -58,7 +58,7 @@ namespace AP
 			vertical = Input.GetAxis ("Vertical");
 			horizontal = Input.GetAxis ("Horizontal");
 			b_input = Input.GetButton ("b_input");
-			a_input = Input.GetButton ("a_input");
+			a_input = Input.GetButtonDown ("a_input");
 			x_input = Input.GetButton ("x_input");
 			y_input = Input.GetButton ("y_input");
 

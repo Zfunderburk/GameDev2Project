@@ -28,9 +28,5 @@ namespace AP
 			states.myBody.velocity = v;
 		}
 
-		public void LateTick()
-		{
-			
-		}
 	}
 }

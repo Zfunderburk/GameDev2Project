@@ -99,7 +99,6 @@ public class StateManager : MonoBehaviour
 				}
 
 			}
-				
 
 			canMove = anim.GetBool ("canMove");
 
@@ -153,6 +152,47 @@ public class StateManager : MonoBehaviour
 			HandleMovementAnimations ();
 		}
 
+
+
+
+
+		float timeWindow = 2;
+		bool allowCombo = false;
+		IEnumerator WaitTime ()
+		{
+			allowCombo = true;
+			float timeElapsed = 0;
+			while (timeElapsed < timeWindow)
+			{
+				timeElapsed += Time.deltaTime;
+				yield return null;
+			}
+
+			allowCombo = false;
+		}
+
+		void Combo()
+		{
+			string targetAnim = null;
+			if (a)
+			{
+				targetAnim = "oh_attack_1";
+				if (allowCombo)
+				{
+					//combo
+					Debug.Log("COMBO");
+				}
+				else 
+				{
+					Debug.Log ("NOCOMBO");
+				}
+				StopCoroutine ("WaitTime");
+				StartCoroutine ("WaitTime");
+			}
+
+		}
+
+
 		public void DetectAction()
 		{
 			float betweenAtt = 0;
@@ -163,11 +203,29 @@ public class StateManager : MonoBehaviour
 				return;
 
 			string targetAnim = null;
-
+			/*
 			if (a) 
 			{
+				
+
+
 				targetAnim = "oh_attack_1";
-			}
+
+
+
+				if (allowCombo)
+				{
+
+					// Combo
+					Debug.Log ("COMBO");
+				}
+				else
+					Debug.Log (" NO  COMBO");
+
+			
+				StopCoroutine ("WaitTime");
+				StartCoroutine ("WaitTime");
+			}*/
 				
 			
 		
