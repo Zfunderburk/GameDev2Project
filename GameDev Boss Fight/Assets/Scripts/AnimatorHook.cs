@@ -8,6 +8,7 @@ namespace AP
 	{
 		Animator anim;
 		StateManager states;
+
 		public void Init(StateManager st)
 		{
 			states = st;
@@ -20,10 +21,10 @@ namespace AP
 				return;
 			
 			states.myBody.drag = 0;
-			float multiplier = 1; //fat rolls and what not
+			float multiplier = 1;									//fat rolls and what not
 
 			Vector3 delta = anim.deltaPosition;
-			delta.y = 0; //no changing delta y
+			delta.y = 0;											//no changing delta y
 			Vector3 v = (delta * multiplier) / states.delta;
 			states.myBody.velocity = v;
 		}
