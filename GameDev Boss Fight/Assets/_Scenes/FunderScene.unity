@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.57482487, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -620,6 +620,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 259922369}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &284219485 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1796506226248578, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
+    type: 2}
+  m_PrefabInternal: {fileID: 1026326236}
+--- !u!114 &284219489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 284219485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8966384edbc554e21ad47d0061d6e2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &314082584
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +981,7 @@ Prefab:
     - target: {fileID: 114816478265371690, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
         type: 2}
       propertyPath: moveSpeed
-      value: 7
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4032647934875722, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
       propertyPath: m_LocalScale.x
@@ -996,6 +1012,16 @@ Prefab:
       propertyPath: lb
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114816478265371690, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: runSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114816478265371690, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: lockOnTarget
+      value: 
+      objectReference: {fileID: 284219489}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
   m_IsPrefabParent: 0
@@ -1920,6 +1946,11 @@ Prefab:
     - target: {fileID: 4671953549019458, guid: 5f4dd6981b5c3432baf1f90ea799fed2, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114734905927540566, guid: 5f4dd6981b5c3432baf1f90ea799fed2,
+        type: 2}
+      propertyPath: lockOnTarget
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f4dd6981b5c3432baf1f90ea799fed2, type: 2}

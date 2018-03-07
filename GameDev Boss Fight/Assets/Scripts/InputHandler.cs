@@ -22,6 +22,8 @@ namespace AP
 		float lt_axis;
 		bool lt_input;*/
 
+		bool rightAxis_down;
+
 		StateManager states;
 			
 		CameraManager camManager;
@@ -62,7 +64,8 @@ namespace AP
 			x_input = Input.GetButton ("x_input");
 			y_input = Input.GetButton ("y_input");
 
-
+			rightAxis_down = Input.GetButtonDown ("rightAxis_down");
+			//Debug.Log (rightAxis_down);
 
 
 
@@ -104,6 +107,8 @@ namespace AP
 			{
 				states.run = false;
 			}
+			states.rollInput = x_input;
+			//if (x_input)
 			//states.rt = rt_input;
 			//states.rb = rb_input;
 			//states.lt = lt_input;
@@ -111,6 +116,17 @@ namespace AP
 			states.a = a_input;
 			states.x = x_input;
 			states.y = y_input;
+
+			if (rightAxis_down)
+			{
+				states.lockOn = !states.lockOn;
+				if(states.lockOnTarget == null)
+				{
+					states.lockOn = false;
+				}
+				camManager.lockOnTarget = states.lockOnTarget.transform;
+				camManager.lockOn = states.lockOn;
+			}
 
 		}
 	}

@@ -14,6 +14,8 @@ public class StateManager : MonoBehaviour
 		public Vector3 moveDir;
 		//public bool rt, rb, lt, lb;
 		public bool a, x, y;
+		public bool rollInput;
+
 
 		[Header("Stats")]
 		public float moveSpeed = 2f;
@@ -27,6 +29,9 @@ public class StateManager : MonoBehaviour
 		public bool lockOn;
 		public bool inAction;
 		public bool canMove;
+
+		[Header("Other")]
+		public EnemyTarget lockOnTarget;
 
 		public GameObject activeModel;
 		public Animator anim;
@@ -107,6 +112,8 @@ public class StateManager : MonoBehaviour
 				return;
 			}
 
+			HandleRolls ();
+
 			anim.applyRootMotion = false;
 
 			//myBody.drag = (moveAmount > 0|| onGround ==false) ? 0 : 4; this is the same as the if else underneath
@@ -147,9 +154,24 @@ public class StateManager : MonoBehaviour
 				Quaternion targetRotation = Quaternion.Slerp (transform.rotation, tr, delta * moveAmount * rotateSpeed);
 				transform.rotation = targetRotation;
 			}
+			else
+			{
+				Vector3 targetDir = lockOnTarget.transform.position - transform.position;
+				targetDir.y = 0;
+				if (targetDir == Vector3.zero)
+				{
+					targetDir = transform.forward;
+				}
+				Quaternion tr = Quaternion.LookRotation (targetDir);
+				Quaternion targetRotation = Quaternion.Slerp (transform.rotation, tr, delta * moveAmount * rotateSpeed);
+				transform.rotation = targetRotation;
+			}
+			anim.SetBool ("lockon", lockOn);
 
-
-			HandleMovementAnimations ();
+			if (lockOn == false)
+				HandleMovementAnimations ();
+			else
+				HandleLockOnAnimations (moveDir);
 		}
 
 
@@ -246,10 +268,54 @@ public class StateManager : MonoBehaviour
 			anim.SetBool ("onGround", onGround);
 		}
 
+		void HandleRolls()
+		{
+			if (!rollInput)
+				return;
+			float v = vertical;
+			float h = 0;
+
+			if (lockOn == false)
+			{
+				v = (moveAmount > 0.3f) ? 1 : 0; //if moveamount is less than 0.3 then set it to 1 otherwise set to 0
+				h = 0;
+			}
+			else
+			{
+				if (Mathf.Abs (v) < 0.3f)
+					v = 0;
+				if (Mathf.Abs (h) < 0.3f)
+					h = 0;
+			}
+
+		/*	if (moveDir == Vector3.zero) // this is another way of doing the rolls but it is worse imo and doesnt work as well
+				moveDir = transform.forward;
+			Quaternion targetRot = Quaternion.LookRotation (moveDir);
+			transform.rotation = targetRot;*/
+
+
+			anim.SetFloat ("Vertical", v);
+			anim.SetFloat ("Horizontal", h);
+
+			canMove = false;
+			inAction = true;
+			anim.CrossFade ("Rolls", 0.2f);
+		}
+
 		void HandleMovementAnimations()
 		{
 			anim.SetBool ("run", run);
 			anim.SetFloat ("Vertical", moveAmount, 0.4f, delta);
+		}
+
+		void HandleLockOnAnimations(Vector3 moveDir)
+		{
+			Vector3 relativeDir = transform.InverseTransformDirection (moveDir);
+			float h = relativeDir.x;	//horizontal
+			float v = relativeDir.z;	//vertical
+
+			anim.SetFloat ("Vertical", v, 0.2f, delta);
+			anim.SetFloat ("Horizontal", h, 0.2f, delta);
 		}
 
 		public bool OnGround()
