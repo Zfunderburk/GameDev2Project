@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class WeaponParent : MonoBehaviour {
 
+	public Transform Spawn;
 	public GameObject handle;
+	public Transform weapon;
 
+	public bool dropWeapon;
 
 
 	void OnTriggerEnter (Collider other)
@@ -16,14 +19,36 @@ public class WeaponParent : MonoBehaviour {
 
 	}
 
-	void DropWeapon ()
+	void FixedUpdate ()
 	{
-		if (Input.GetKeyDown ("t"))
+		if(Input.GetKeyDown ("space"))
 		{
-			transform.parent = null;
-			Debug.Log ("Weapon Dropped");
+			dropWeapon = true;
 		}
+
+//		DropWeapon ();
+
+		if(dropWeapon == true)
+		{
+			weapon.transform.parent = null;
+
+//			weapon.transform.parent = Spawn;
+			weapon.transform.position = Spawn.transform.position;
+			weapon.transform.rotation = Quaternion.Euler (Vector3.zero);
+
+			dropWeapon = false;
+		}
+
+
 	}
+
+//	void DropWeapon ()
+//	{
+//		if(dropWeapon == true)
+//		{
+//			weapon.transform.parent = null;
+//		}
+//	}
 
 
 }

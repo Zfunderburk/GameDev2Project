@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.57482487, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5645453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000022888184, y: 1, z: 34.549995}
+  m_LocalPosition: {x: -0.000022888184, y: 1.89, z: 34.549995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1464121544}
@@ -407,6 +407,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76e838b233054e28bac72d214352b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+=======
+  enemy: {fileID: 284219485}
+>>>>>>> Stashed changes
   spawnPoint: {fileID: 1711331179}
   enemyHealth: {fileID: 314082587}
   canMove: 0
@@ -1188,7 +1192,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 328750370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 526210604}
@@ -1219,7 +1223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a28e3e20d4e424eb8a7a5f70fcdee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Spawn: {fileID: 1860574232}
   handle: {fileID: 1034193559}
+<<<<<<< Updated upstream
 --- !u!1 &370190975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1287,10 @@ Transform:
   m_Father: {fileID: 1567815644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  weapon: {fileID: 328750371}
+  dropWeapon: 0
+>>>>>>> Stashed changes
 --- !u!1 &405383328
 GameObject:
   m_ObjectHideFlags: 0
@@ -15842,7 +15852,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1107700791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.46, z: 0}
+  m_LocalPosition: {x: 0, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 550413991}
@@ -15873,8 +15883,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a28e3e20d4e424eb8a7a5f70fcdee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Spawn: {fileID: 1677366787}
   handle: {fileID: 1034193559}
+<<<<<<< Updated upstream
 --- !u!1 &1112431692
+=======
+  weapon: {fileID: 1107700792}
+  dropWeapon: 0
+--- !u!1 &1155150255
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1726734968107124, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
@@ -16974,7 +16991,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1464121543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.68, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405383329}
@@ -17005,7 +17022,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a28e3e20d4e424eb8a7a5f70fcdee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Spawn: {fileID: 5645454}
   handle: {fileID: 1034193559}
+  weapon: {fileID: 1464121544}
+  dropWeapon: 0
 --- !u!4 &1478121793
 Transform:
   m_ObjectHideFlags: 0
@@ -17426,7 +17446,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1677366786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.000023, y: 1, z: 34.549995}
+  m_LocalPosition: {x: -17.000023, y: 2, z: 34.549995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1107700792}
@@ -18035,7 +18055,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1860574231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.999985, y: 1.336, z: 34.549995}
+  m_LocalPosition: {x: 16.999985, y: 1.72, z: 34.549995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 328750371}
@@ -18111,7 +18131,11 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< Updated upstream
   m_Name: pb_Mesh11592
+=======
+  m_Name: pb_Mesh12248
+>>>>>>> Stashed changes
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
