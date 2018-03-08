@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponParent : MonoBehaviour {
 
+	public Transform Spawn;
 	public GameObject handle;
 	public Transform Spawn;
 	public Transform weapon;
@@ -40,6 +41,13 @@ public class WeaponParent : MonoBehaviour {
 
 	}
 
+//	void DropWeapon ()
+//	{
+//		if(dropWeapon == true)
+//		{
+//			weapon.transform.parent = null;
+//		}
+//	}
 
 //	void DropWeapon ()
 //	{
