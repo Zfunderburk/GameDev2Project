@@ -5,6 +5,10 @@ using UnityEngine;
 public class WeaponParent : MonoBehaviour {
 
 	public GameObject handle;
+	public Transform Spawn;
+	public Transform weapon;
+
+	public bool dropWeapon;
 
 
 
@@ -16,14 +20,31 @@ public class WeaponParent : MonoBehaviour {
 
 	}
 
-	void DropWeapon ()
+	void Update ()
 	{
-		if (Input.GetKeyDown ("t"))
+		if (Input.GetKeyDown ("space"))
 		{
-			transform.parent = null;
+			dropWeapon = true;
 			Debug.Log ("Weapon Dropped");
 		}
+
+		if(dropWeapon == true)
+		{
+			weapon.transform.parent = null;
+
+			weapon.transform.position = Spawn.transform.position;
+			weapon.transform.rotation = Quaternion.Euler (Vector3.zero);
+
+			dropWeapon = false;
+		}
+
 	}
+
+
+//	void DropWeapon ()
+//	{
+//		
+//	}
 
 
 }
