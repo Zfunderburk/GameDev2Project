@@ -459,10 +459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76e838b233054e28bac72d214352b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-=======
-  enemy: {fileID: 284219485}
->>>>>>> Stashed changes
   spawnPoint: {fileID: 1711331179}
   enemyHealth: {fileID: 314082587}
   canMove: 0
@@ -1118,7 +1114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a28e3e20d4e424eb8a7a5f70fcdee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawn: {fileID: 1860574232}
   handle: {fileID: 1034193559}
   Spawn: {fileID: 1860574232}
   weapon: {fileID: 328750371}
@@ -1184,10 +1179,6 @@ Transform:
   m_Father: {fileID: 1567815644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
-  weapon: {fileID: 328750371}
-  dropWeapon: 0
->>>>>>> Stashed changes
 --- !u!1 &405383328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2956,17 +2947,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a28e3e20d4e424eb8a7a5f70fcdee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawn: {fileID: 1677366787}
   handle: {fileID: 1034193559}
   Spawn: {fileID: 1677366787}
   weapon: {fileID: 1107700792}
   dropWeapon: 0
 --- !u!1 &1112431692
-=======
-  weapon: {fileID: 1107700792}
-  dropWeapon: 0
---- !u!1 &1155150255
->>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1726734968107124, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
@@ -4089,7 +4074,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a28e3e20d4e424eb8a7a5f70fcdee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawn: {fileID: 5645454}
   handle: {fileID: 1034193559}
   Spawn: {fileID: 5645454}
   weapon: {fileID: 1464121544}
