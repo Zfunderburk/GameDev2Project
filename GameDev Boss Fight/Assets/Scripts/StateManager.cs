@@ -225,7 +225,7 @@ public class StateManager : MonoBehaviour
 				return;
 
 			string targetAnim = null;
-			/*
+
 			if (a) 
 			{
 				
@@ -247,7 +247,7 @@ public class StateManager : MonoBehaviour
 			
 				StopCoroutine ("WaitTime");
 				StartCoroutine ("WaitTime");
-			}*/
+			}
 				
 			
 		

@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour 
 {
-	public GameObject enemy;
+	//public Transform player;
 	public GameObject spawnPoint;
 
 
 
 	public Canvas enemyHealth;
 
-	private bool canMove;
+	public bool canMove;
 	private float range;
 	private float minDistance = 1f;
 	private float speed = 3f;
@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
 	void Start ()
 	{
 		enemyHealth.enabled = false;
+		canMove = false;
 
 	}
 
