@@ -9,20 +9,15 @@ public class WeaponParent : MonoBehaviour {
 	public Transform Spawn;
 	public Transform weapon;
 
+	public float rotateSpeed = 3.5f;
+
 	public bool dropWeapon;
 
 
-
-	void OnTriggerEnter (Collider other)
-	{
-		transform.parent = handle.transform;								//Parents, but doesnt set to hand Position
-		transform.localPosition = new Vector3(0,0,0);						//Sets Weapon to the local position of Hand
-		transform.localRotation = Quaternion.identity;						//Sets Weapon to the local rotation of Hand
-
-	}
-
 	void Update ()
 	{
+		transform.Rotate (new Vector3 (0, 30, 0) * (Time.deltaTime * rotateSpeed));
+
 		if (Input.GetKeyDown ("space"))
 		{
 			dropWeapon = true;
@@ -37,22 +32,16 @@ public class WeaponParent : MonoBehaviour {
 			weapon.transform.rotation = Quaternion.Euler (Vector3.zero);
 
 			dropWeapon = false;
+			rotateSpeed = 3.5f;
 		}
 
 	}
-
-//	void DropWeapon ()
-//	{
-//		if(dropWeapon == true)
-//		{
-//			weapon.transform.parent = null;
-//		}
-//	}
-
-//	void DropWeapon ()
-//	{
-//		
-//	}
-
-
+		
+	void OnTriggerEnter (Collider other)
+	{
+		transform.parent = handle.transform;								//Parents, but doesnt set to hand Position
+		transform.localPosition = new Vector3(0,0,0);						//Sets Weapon to the local position of Hand
+		transform.localRotation = Quaternion.identity;						//Sets Weapon to the local rotation of Hand
+		rotateSpeed = 0f;
+	}
 }

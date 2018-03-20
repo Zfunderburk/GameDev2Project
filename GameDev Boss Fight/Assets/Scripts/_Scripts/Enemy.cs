@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (canMove = false)
+		if (canMove == false)
 		{
 			Movement = Vector3.zero;
 		}
