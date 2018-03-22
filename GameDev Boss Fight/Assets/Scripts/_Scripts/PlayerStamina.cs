@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStamina : MonoBehaviour 
+namespace AP
 {
-//	public StateManager
+
+	public class PlayerStamina : MonoBehaviour 
+	{
+	StateManager states;
 
 	public int starterStamina = 100;
 	public float currentStamina;
@@ -22,6 +25,8 @@ public class PlayerStamina : MonoBehaviour
 
 	void Update () 
 	{
+
+	}
 
 	}
 
