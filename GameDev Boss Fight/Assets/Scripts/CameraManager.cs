@@ -14,10 +14,13 @@ namespace AP
 		public float controllerSpeed = 7;
 
 		public Transform target;
-		public Transform lockOnTarget;
+		public EnemyTarget lockonTarget;
+		public Transform lockOnTransform;
 
 		public Transform pivot;
 		public Transform camTrans;
+
+		StateManager states;
 
 		float turnSmoothing = .1f;
 		public float minAngle = -35;
@@ -30,9 +33,12 @@ namespace AP
 		public float lookAngle;
 		public float tiltAngle;
 
-		public void Init(Transform t)
+		bool usedRightAxis;
+
+		public void Init(StateManager st)
 		{
-			target = t;
+			states = st;
+			target = st.transform;
 
 			camTrans = Camera.main.transform;
 			pivot = camTrans.parent;
@@ -47,6 +53,31 @@ namespace AP
 			float c_v = Input.GetAxis ("RightJoyUD");
 
 			float targetSpeed = mouseSpeed;
+
+			if (lockonTarget != null) 
+			{
+				if (lockOnTransform == null) 
+				{
+					lockOnTransform = lockonTarget.GetTarget();
+					states.lockOnTransform = lockOnTransform;
+				}
+				if (Mathf.Abs (c_h) > 0.6f) 
+				{
+					if (!usedRightAxis) 
+					{
+						lockOnTransform = lockonTarget.GetTarget ((c_h > 0));
+						states.lockOnTransform = lockOnTransform;
+						usedRightAxis = true;
+					}
+				}
+			}
+			if (usedRightAxis)
+			{
+				if (Mathf.Abs(c_h)>0.6f)
+				{
+					usedRightAxis = false;
+				}
+			}
 
 			if (c_h != 0 || c_v != 0)
 			{
@@ -82,22 +113,24 @@ namespace AP
 			tiltAngle = Mathf.Clamp (tiltAngle, minAngle, maxAngle);
 			pivot.localRotation = Quaternion.Euler (tiltAngle, 0, 0);
 
-			if(lockOnTarget == false)
+			if(lockonTarget == false)
 				lockOn = false;
 
 			if (lockOn)
 			{
-				Vector3 targetDir = lockOnTarget.position - transform.position;
+				Vector3 targetDir = lockOnTransform.position - transform.position;
 				targetDir.Normalize ();
 				//targetDir.y = 0;
 
 				if (targetDir == Vector3.zero)
 					targetDir = transform.forward;
+				
 				Quaternion targetRot = Quaternion.LookRotation (targetDir);
 				transform.rotation = Quaternion.Slerp (transform.rotation, targetRot, d * 9);
 				lookAngle = transform.eulerAngles.y;
 				return;
 			}
+
 
 			lookAngle += smoothX * targetSpeed;
 			transform.rotation = Quaternion.Euler (0, lookAngle, 0);
@@ -112,15 +145,6 @@ namespace AP
 		{
 			singleton = this;
 		}
-
-		// Use this for initialization
-		void Start () {
-		
-		}
-	
-		// Update is called once per frame
-		void Update () {
-		
-		}
+			
 	}
 }

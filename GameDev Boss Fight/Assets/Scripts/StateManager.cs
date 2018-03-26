@@ -22,6 +22,7 @@ public class StateManager : MonoBehaviour
 		public float runSpeed = 3.5f;
 		public float rotateSpeed = 5;
 		public float toGround = 0.5f;
+		public float rollSpeed = 1;
 
 		[Header("States")]
 		public bool run;
@@ -32,6 +33,9 @@ public class StateManager : MonoBehaviour
 
 		[Header("Other")]
 		public EnemyTarget lockOnTarget;
+		public Transform lockOnTransform;
+		public AnimationCurve roll_curve;
+		public WeaponHook w_hook;
 
 		public GameObject activeModel;
 		public Animator anim;
@@ -52,13 +56,19 @@ public class StateManager : MonoBehaviour
 			myBody.drag = 4;
 			myBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
-			a_hook = activeModel.AddComponent<AnimatorHook>();
-			a_hook.Init (this);
+			a_hook = activeModel.GetComponent < AnimatorHook> ();
+			if (a_hook == null)
+			{
+				a_hook = activeModel.AddComponent<AnimatorHook>();
+			}
+			a_hook.Init (this, null);
 
 			gameObject.layer = 8;
 			ignoreLayers = ~(1 << 9);
 
 			anim.SetBool ("onGround", true);
+
+			w_hook.CloseDamageColliders (); //in videos this is dealt with on inventory manager which i am not using
 		}
 
 		void SetUpAnimator()
@@ -112,7 +122,10 @@ public class StateManager : MonoBehaviour
 				return;
 			}
 
+			//a_hook.rm_multi = 1;
+			a_hook.CloseRoll();
 			HandleRolls ();
+
 
 			anim.applyRootMotion = false;
 
@@ -142,9 +155,11 @@ public class StateManager : MonoBehaviour
 				lockOn = false;
 			}
 
-			if (!lockOn)
-			{
-				Vector3 targetDir = moveDir;
+			Vector3 targetDir = (lockOn == false) ? moveDir //if lockon is false then use move dir
+				: (lockOnTransform != null)? //if it isnt then check this 
+				lockOnTransform.transform.position - transform.position: //if it isnt null then use these
+				moveDir; // otherwise use the moveDir
+
 				targetDir.y = 0;
 				if (targetDir == Vector3.zero)
 				{
@@ -153,19 +168,8 @@ public class StateManager : MonoBehaviour
 				Quaternion tr = Quaternion.LookRotation (targetDir);
 				Quaternion targetRotation = Quaternion.Slerp (transform.rotation, tr, delta * moveAmount * rotateSpeed);
 				transform.rotation = targetRotation;
-			}
-			else
-			{
-				Vector3 targetDir = lockOnTarget.transform.position - transform.position;
-				targetDir.y = 0;
-				if (targetDir == Vector3.zero)
-				{
-					targetDir = transform.forward;
-				}
-				Quaternion tr = Quaternion.LookRotation (targetDir);
-				Quaternion targetRotation = Quaternion.Slerp (transform.rotation, tr, delta * moveAmount * rotateSpeed);
-				transform.rotation = targetRotation;
-			}
+		
+
 			anim.SetBool ("lockon", lockOn);
 
 			if (lockOn == false)
@@ -228,23 +232,13 @@ public class StateManager : MonoBehaviour
 
 			if (a) 
 			{
-				
-
-
 				targetAnim = "oh_attack_1";
 
-
-
-				if (allowCombo)
-				{
-
+				if (allowCombo) {
 					// Combo
 					Debug.Log ("COMBO");
-				}
-				else
+				} else
 					Debug.Log (" NO  COMBO");
-
-			
 				StopCoroutine ("WaitTime");
 				StartCoroutine ("WaitTime");
 			}
@@ -275,7 +269,7 @@ public class StateManager : MonoBehaviour
 			float v = vertical;
 			float h = 0;
 
-			if (lockOn == false)
+			/*if (lockOn == false)
 			{
 				v = (moveAmount > 0.3f) ? 1 : 0; //if moveamount is less than 0.3 then set it to 1 otherwise set to 0
 				h = 0;
@@ -286,20 +280,28 @@ public class StateManager : MonoBehaviour
 					v = 0;
 				if (Mathf.Abs (h) < 0.3f)
 					h = 0;
+			}*/
+
+			if(v!=0)
+			{
+				if (moveDir == Vector3.zero) // this is another way of doing the rolls but it is worse imo and doesnt work as well
+					moveDir = transform.forward;
+				Quaternion targetRot = Quaternion.LookRotation (moveDir);
+				transform.rotation = targetRot;
+				a_hook.InitForRoll ();
+				a_hook.rm_multi = rollSpeed;
 			}
-
-		/*	if (moveDir == Vector3.zero) // this is another way of doing the rolls but it is worse imo and doesnt work as well
-				moveDir = transform.forward;
-			Quaternion targetRot = Quaternion.LookRotation (moveDir);
-			transform.rotation = targetRot;*/
-
-
+			else
+			{
+				a_hook.rm_multi = 1.3f;
+			}
 			anim.SetFloat ("Vertical", v);
 			anim.SetFloat ("Horizontal", h);
 
 			canMove = false;
 			inAction = true;
 			anim.CrossFade ("Rolls", 0.2f);
+
 		}
 
 		void HandleMovementAnimations()

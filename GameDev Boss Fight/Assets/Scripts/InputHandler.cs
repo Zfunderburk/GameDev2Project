@@ -22,6 +22,8 @@ namespace AP
 		float lt_axis;
 		bool lt_input;*/
 
+		float b_timer;
+
 		bool rightAxis_down;
 
 		StateManager states;
@@ -36,7 +38,7 @@ namespace AP
 			states.Init ();
 
 			camManager = CameraManager.singleton;
-			camManager.Init (this.transform);
+			camManager.Init (states);
 		}
 
 
@@ -52,7 +54,9 @@ namespace AP
 		void Update()
 		{			
 			delta = Time.deltaTime;
-			states.Tick (delta);		
+			states.Tick (delta);	
+			ResetInputNStates ();
+
 		}
 
 		void GetInput()
@@ -65,10 +69,11 @@ namespace AP
 			y_input = Input.GetButton ("y_input");
 
 			rightAxis_down = Input.GetButtonDown ("rightAxis_down");
+			if (b_input)
+			{
+				b_timer += delta;
+			}
 			//Debug.Log (rightAxis_down);
-
-
-
 			/*rt_input = Input.GetButton ("RT"); //button and axis so keyboard or controller
 			rt_axis = Input.GetAxis("RT");
 
@@ -99,13 +104,13 @@ namespace AP
 			float m = Mathf.Abs (horizontal) + Mathf.Abs (vertical);
 			states.moveAmount = Mathf.Clamp01 (m);
 
-			if (b_input)
+			if (b_input && b_timer > 0.5f)
 			{
 				states.run = (states.moveAmount > 0);
 			}
-			else
+			if (b_input == false && b_timer > 0 && b_timer < 0.5f)
 			{
-				states.run = false;
+				states.rollInput = true;
 			}
 			states.rollInput = x_input;
 			//if (x_input)
@@ -120,14 +125,33 @@ namespace AP
 			if (rightAxis_down)
 			{
 				states.lockOn = !states.lockOn;
+				//states.lockOn = EnemyManager.singleton.GetEnemy (transform.position); //since we hav 1 enemy we dont need to change
 				if(states.lockOnTarget == null)
 				{
 					states.lockOn = false;
 				}
-				camManager.lockOnTarget = states.lockOnTarget.transform;
+				//states.lockOn = false;
+				camManager.lockonTarget = states.lockOnTarget;
+				//states.lockOnTransform = states.lockOnTarget.GetTarget ();//when i try to change it messes up the lock on that works 
+				states.lockOnTransform = camManager.lockOnTransform;
 				camManager.lockOn = states.lockOn;
 			}
 
+		}
+		void ResetInputNStates()
+		{
+			if (b_input == false)
+			{
+				b_timer = 0;
+			}
+			if (states.rollInput)
+			{
+				states.rollInput = false;
+			}
+			if(states.run)
+			{
+				states.run = false;
+			}
 		}
 	}
 }

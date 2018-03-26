@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ToDoList : MonoBehaviour 
 {
+	//IF THE ENEMIES ARE ACTING WEIRD LATER CHECK TO SEE IF THE ANIMATOR HOOK IS ON THE ENEMY MODEL
+	//part 8 ends with setting up a ragdoll for the enemy I skipped it can add later if wanted/needed
+
+
 	//Make camera move faster
 
 	//Character movement Script
