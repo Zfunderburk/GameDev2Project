@@ -56,7 +56,7 @@ public class StateManager : MonoBehaviour
 			myBody.drag = 4;
 			myBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
-			a_hook = activeModel.GetComponent < AnimatorHook> ();
+			a_hook = activeModel.GetComponent <AnimatorHook> ();
 			if (a_hook == null)
 			{
 				a_hook = activeModel.AddComponent<AnimatorHook>();
