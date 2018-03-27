@@ -160,7 +160,9 @@ MonoBehaviour:
   mouseSpeed: 2
   controllerSpeed: 5
   target: {fileID: 0}
-  pivot: {fileID: 0}
+  lockonTarget: {fileID: 0}
+  lockOnTransform: {fileID: 0}
+  pivot: {fileID: 4641433838085850}
   camTrans: {fileID: 0}
   minAngle: -35
   maxAngle: 35
