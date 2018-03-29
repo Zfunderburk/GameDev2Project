@@ -19,7 +19,7 @@ public class StateManager : MonoBehaviour
 
 		[Header("Stats")]
 		public float moveSpeed = 2f;
-		public float runSpeed = 3.5f;
+		public float runSpeed = 6f;
 		public float rotateSpeed = 5;
 		public float toGround = 0.5f;
 		public float rollSpeed = 1;

@@ -5,28 +5,50 @@ using UnityEngine.UI;
 
 namespace AP
 {
-
 	public class PlayerStamina : MonoBehaviour 
 	{
-	StateManager states;
+		StateManager states;
 
-	public int starterStamina = 100;
-	public float currentStamina;
-	public Slider StaminaSlider;
-	public Image StaminaFill;
+		public float maxStamina = 100f;
+		public float currentStamina;
+		public float lossSpeed = 3f;
+		public float gainSpeed = 5f; 
+		public Slider StaminaSlider;
+		public Image StaminaFill;
 
-	public bool damaged;
+		public StateManager run;
 
-	void Awake () 
-	{
-		currentStamina = starterStamina;
-	}
+		void Start () 
+		{
+			StaminaSlider = GetComponent<Slider>();
+			currentStamina = maxStamina;
+		}
 
 
-	void Update () 
-	{
+		void Update ()
+		{
+			CalculateStamina();
+		}
 
-	}
+		void CalculateStamina ()
+		{
+			float calcStam = currentStamina / maxStamina;
+
+			if(calcStam <= 0)
+			{
+				calcStam = 0;
+			}
+
+			SetStaminaBar (calcStam);
+		}
+
+		void SetStaminaBar (float myStamina)
+		{
+			StaminaFill.transform.localScale = new Vector3 (myStamina, StaminaFill.transform.localScale.y, StaminaFill.transform.localScale.z);
+
+		}
+
+
 
 	}
 
