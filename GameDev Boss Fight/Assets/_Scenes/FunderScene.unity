@@ -3789,7 +3789,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4879063774477194, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.713
       objectReference: {fileID: 0}
     - target: {fileID: 4879063774477194, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3819,16 +3819,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114924973211107662, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
-        type: 2}
-      propertyPath: StaminaSlider
-      value: 
-      objectReference: {fileID: 1137692285}
-    - target: {fileID: 114924973211107662, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
-        type: 2}
-      propertyPath: StaminaFill
-      value: 
-      objectReference: {fileID: 1161782543}
     - target: {fileID: 114816478265371690, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
         type: 2}
       propertyPath: lockOnTarget
@@ -3839,6 +3829,26 @@ Prefab:
       propertyPath: w_hook
       value: 
       objectReference: {fileID: 1107700795}
+    - target: {fileID: 114924973211107662, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: staminaSlider
+      value: 
+      objectReference: {fileID: 1137692285}
+    - target: {fileID: 114924973211107662, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: staminaFill
+      value: 
+      objectReference: {fileID: 1161782543}
+    - target: {fileID: 114924973211107662, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: lossSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924973211107662, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: gainSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
   m_IsPrefabParent: 0
