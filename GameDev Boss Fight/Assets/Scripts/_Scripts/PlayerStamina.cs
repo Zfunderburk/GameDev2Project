@@ -37,7 +37,7 @@ namespace AP
 
 			else 
 			{
-				StartCoroutine(StaminaPause());
+//				StartCoroutine(StaminaPause());
 				staminaSlider.value += gainSpeed * Time.deltaTime;
 			}
 
@@ -58,7 +58,9 @@ namespace AP
 
 		IEnumerator StaminaPause ()
 		{
-			yield return new WaitForSeconds(3);
+			print ("Pause");
+			yield return new WaitForSeconds(10);
+			print ("End Pause");
 		}
 
 
