@@ -16,6 +16,7 @@ namespace AP
 		public Slider staminaSlider;
 		public Image staminaFill;
 
+		public Animator anim;
 
 		void Start () 
 		{
@@ -26,6 +27,7 @@ namespace AP
 		void Update ()
 		{
 			CalculateStamina();
+			Debug.Log (currentStamina);
 		}
 
 		void CalculateStamina ()
@@ -33,53 +35,25 @@ namespace AP
 			if(Input.GetKey(KeyCode.LeftShift))
 			{
 				staminaSlider.value -= lossSpeed * Time.deltaTime;
+				currentStamina -= lossSpeed * Time.deltaTime;
 			}
 
 			else 
 			{
-//				StartCoroutine(StaminaPause());
+				currentStamina += gainSpeed * Time.deltaTime;
 				staminaSlider.value += gainSpeed * Time.deltaTime;
+
 			}
 
-//			currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+			currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
 
-			if (currentStamina >= maxStamina)
+			if(currentStamina <= 1)
 			{
-				currentStamina = maxStamina;
-			}
-
-			else if(currentStamina <= 0)
-			{
-				currentStamina = 0;
-				states.run = false;
+				anim.SetBool ("run", false);
 			}
 
 		}
-
-		IEnumerator StaminaPause ()
-		{
-			print ("Pause");
-			yield return new WaitForSeconds(10);
-			print ("End Pause");
-		}
-
-
-
 	}
 
 }
 
-//		void SetStaminaBar (float myStamina)
-//		{
-//			StaminaFill.transform.localScale = new Vector3 (myStamina, StaminaFill.transform.localScale.y, StaminaFill.transform.localScale.z);
-//
-//		}
-
-//			float calcStam = currentStamina / maxStamina;
-//
-//			if(calcStam <= 0)
-//			{
-//				calcStam = 0;
-//			}
-//
-//			SetStaminaBar (calcStam);
