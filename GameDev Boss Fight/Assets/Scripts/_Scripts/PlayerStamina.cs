@@ -11,16 +11,14 @@ namespace AP
 
 		public float maxStamina = 100f;
 		public float currentStamina;
-		public float lossSpeed = 3f;
-		public float gainSpeed = 5f; 
-		public Slider StaminaSlider;
-		public Image StaminaFill;
+		public float lossSpeed = 15f;
+		public float gainSpeed = 20f; 
+		public Slider staminaSlider;
+		public Image staminaFill;
 
-		public StateManager run;
 
 		void Start () 
 		{
-			StaminaSlider = GetComponent<Slider>();
 			currentStamina = maxStamina;
 		}
 
@@ -32,24 +30,50 @@ namespace AP
 
 		void CalculateStamina ()
 		{
-			float calcStam = currentStamina / maxStamina;
-
-			if(calcStam <= 0)
+			if(Input.GetKey(KeyCode.LeftShift))
 			{
-				calcStam = 0;
+				staminaSlider.value -= lossSpeed * Time.deltaTime;
 			}
 
-			SetStaminaBar (calcStam);
+			else 
+			{
+				staminaSlider.value += gainSpeed * Time.deltaTime;
+			}
+
+//			currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+
+			if (currentStamina >= maxStamina)
+			{
+				currentStamina = maxStamina;
+			}
+
+			else if(currentStamina <= 0)
+			{
+				currentStamina = 0;
+				states.run = false;
+			}
+
 		}
 
-		void SetStaminaBar (float myStamina)
-		{
-			StaminaFill.transform.localScale = new Vector3 (myStamina, StaminaFill.transform.localScale.y, StaminaFill.transform.localScale.z);
 
-		}
 
 
 
 	}
 
 }
+
+//		void SetStaminaBar (float myStamina)
+//		{
+//			StaminaFill.transform.localScale = new Vector3 (myStamina, StaminaFill.transform.localScale.y, StaminaFill.transform.localScale.z);
+//
+//		}
+
+//			float calcStam = currentStamina / maxStamina;
+//
+//			if(calcStam <= 0)
+//			{
+//				calcStam = 0;
+//			}
+//
+//			SetStaminaBar (calcStam);

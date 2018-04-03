@@ -4981,11 +4981,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c5e856eee464573acfcfd4a887ea70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterStamina: 100
+  maxStamina: 100
   currentStamina: 0
   lossSpeed: 3
-  StaminaSlider: {fileID: 0}
-  StaminaFill: {fileID: 0}
+  gainSpeed: 5
+  staminaSlider: {fileID: 0}
+  staminaFill: {fileID: 0}
   run: {fileID: 114816478265371690}
 --- !u!136 &136538975452729174
 CapsuleCollider:
