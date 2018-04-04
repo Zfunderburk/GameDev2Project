@@ -4,12 +4,14 @@ using UnityEngine;
 
 namespace AP
 {
+	//at 40 minutes part 38
 	public class AnimatorHook : MonoBehaviour
 	{
 		Animator anim;
 		StateManager states;
 		EnemyStates eStates;
 		Rigidbody myBody;
+
 	
 
 

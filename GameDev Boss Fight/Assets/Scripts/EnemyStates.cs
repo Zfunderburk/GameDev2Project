@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace AP
 {
@@ -9,6 +10,10 @@ namespace AP
 		public float health;
 		public bool isInvincible;
 		public bool canMove;
+		public bool hasDestination;
+		public Vector3 targetDestination;
+
+		public NavMeshAgent agent;
 
 		public Animator anim;
 		EnemyTarget enTarget;
@@ -16,7 +21,10 @@ namespace AP
 		public Rigidbody myBody;
 		public float delta;
 
-		void Start()
+
+		public LayerMask ignoreLayers;
+
+		public void Init()
 		{
 			anim = GetComponentInChildren<Animator> ();
 			enTarget = GetComponent<EnemyTarget> ();
@@ -30,9 +38,11 @@ namespace AP
 				a_hook = anim.gameObject.AddComponent<AnimatorHook>();
 			}
 			a_hook.Init (null, this);
+
+			ignoreLayers = ~(1 << 9);
 		}
 
-		void Update()
+		public void Tick()
 		{
 			delta = Time.deltaTime;
 			canMove = anim.GetBool ("canMove");
@@ -47,6 +57,17 @@ namespace AP
 				anim.applyRootMotion = false;
 			}
 		
+		}
+
+		public void SetDestination(Vector3 d)
+		{
+			if(!hasDestination)
+			{
+				hasDestination = true;
+				agent.isStopped = false;
+				agent.SetDestination (d);
+				targetDestination = d;
+			}
 		}
 
 		public void DoDamage(float v)
