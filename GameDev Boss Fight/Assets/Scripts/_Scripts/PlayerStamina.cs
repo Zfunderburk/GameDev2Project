@@ -27,7 +27,7 @@ namespace AP
 		void Update ()
 		{
 			CalculateStamina();
-			Debug.Log (currentStamina);
+			//Debug.Log (currentStamina);
 		}
 
 		void CalculateStamina ()
