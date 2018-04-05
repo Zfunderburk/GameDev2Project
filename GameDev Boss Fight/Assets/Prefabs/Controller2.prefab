@@ -4983,11 +4983,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxStamina: 100
   currentStamina: 0
-  lossSpeed: 3
-  gainSpeed: 5
+  lossSpeed: 15
+  gainSpeed: 20
   staminaSlider: {fileID: 0}
   staminaFill: {fileID: 0}
-  run: {fileID: 114816478265371690}
+  anim: {fileID: 95286319729416440}
 --- !u!136 &136538975452729174
 CapsuleCollider:
   m_ObjectHideFlags: 1
