@@ -2423,7 +2423,7 @@ MonoBehaviour:
   canMove: 0
   hasDestination: 0
   targetDestination: {x: 0, y: 0, z: 0}
-  agent: {fileID: 0}
+  agent: {fileID: 1313745627}
   anim: {fileID: 0}
   myBody: {fileID: 0}
   delta: 0
