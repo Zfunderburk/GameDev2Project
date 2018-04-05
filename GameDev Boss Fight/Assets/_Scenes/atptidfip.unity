@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 71f14a2d79f732f4d9893ef1b911f4ff, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.57482487, a: 1}
+  m_IndirectSpecularColor: {r: 0.7300797, g: 0.788819, b: 0.8497099, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -758,7 +758,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.04526
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 65656348349782828, guid: 5a0b816eddfc844178b78002f3dc0915,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114250963727669966, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
+    - {fileID: 65243792947408244, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &442967255
@@ -1070,6 +1077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageCollider:
   - {fileID: 298137257}
+  damColliders: []
 --- !u!1 &608444348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,7 +1608,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 764100148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.8400002, y: -1.92, z: -1.8699989}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 290329218}
@@ -1636,6 +1644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageCollider:
   - {fileID: 290329217}
+  damColliders: []
 --- !u!1001 &823270585
 Prefab:
   m_ObjectHideFlags: 0
@@ -1918,6 +1927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageCollider:
   - {fileID: 702846823}
+  damColliders: []
 --- !u!1 &1188345603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,11 +2561,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4208405237968334, guid: 1b02106ce416943a3ab316bb7546000b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.5100002
       objectReference: {fileID: 0}
     - target: {fileID: 4208405237968334, guid: 1b02106ce416943a3ab316bb7546000b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.38
       objectReference: {fileID: 0}
     - target: {fileID: 4208405237968334, guid: 1b02106ce416943a3ab316bb7546000b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2731,6 +2741,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageCollider:
   - {fileID: 1419159305}
+  damColliders:
+  - {fileID: 0}
 --- !u!4 &1478121793
 Transform:
   m_ObjectHideFlags: 0
@@ -2947,7 +2959,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-239440
+  m_Name: pb_Mesh19432
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
