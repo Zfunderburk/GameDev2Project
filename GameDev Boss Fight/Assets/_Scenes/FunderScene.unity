@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.57482487, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3840,6 +3840,21 @@ Prefab:
       propertyPath: staminaFill
       value: 
       objectReference: {fileID: 1161782543}
+    - target: {fileID: 114816478265371690, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: d_hook
+      value: 
+      objectReference: {fileID: 328750374}
+    - target: {fileID: 114816478265371690, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: ls_hook
+      value: 
+      objectReference: {fileID: 1464121547}
+    - target: {fileID: 114816478265371690, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: g_hook
+      value: 
+      objectReference: {fileID: 1107700795}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
   m_IsPrefabParent: 0
@@ -4900,9 +4915,15 @@ MonoBehaviour:
   health: 0
   isInvincible: 0
   canMove: 0
+  hasDestination: 0
+  targetDestination: {x: 0, y: 0, z: 0}
+  agent: {fileID: 0}
   anim: {fileID: 736392514}
   myBody: {fileID: 1705800525}
   delta: 0
+  ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1711331179
 GameObject:
   m_ObjectHideFlags: 0
