@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 328750372}
   - component: {fileID: 328750373}
   - component: {fileID: 328750374}
+  - component: {fileID: 328750375}
   m_Layer: 0
   m_Name: Dagger_Handle
   m_TagString: Untagged
@@ -1393,6 +1394,20 @@ MonoBehaviour:
   - {fileID: 761360522}
   damColliders:
   - {fileID: 958983615}
+--- !u!114 &328750375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328750370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447068819ee5b4bd2ae9d248982c9d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1336431317}
+  atk: {fileID: 0}
+  atkSpeed: 2
 --- !u!1001 &359685079
 Prefab:
   m_ObjectHideFlags: 0
@@ -4547,6 +4562,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &1336431317 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95286319729416440, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1336431316}
 --- !u!1 &1342860252
 GameObject:
   m_ObjectHideFlags: 0
