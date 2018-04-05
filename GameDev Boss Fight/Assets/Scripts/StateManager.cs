@@ -35,7 +35,9 @@ public class StateManager : MonoBehaviour
 		public EnemyTarget lockOnTarget;
 		public Transform lockOnTransform;
 		public AnimationCurve roll_curve;
-		public WeaponHook w_hook;
+		public WeaponHook d_hook;
+		public WeaponHook g_hook;
+		public WeaponHook ls_hook;
 
 		public GameObject activeModel;
 		public Animator anim;
@@ -68,7 +70,9 @@ public class StateManager : MonoBehaviour
 
 			anim.SetBool ("onGround", true);
 
-			w_hook.CloseDamageColliders (); //in videos this is dealt with on inventory manager which i am not using
+			ls_hook.CloseDamageColliders (); //in videos this is dealt with on inventory manager which i am not using
+			d_hook.CloseDamageColliders ();
+			g_hook.CloseDamageColliders ();
 		}
 
 		void SetUpAnimator()

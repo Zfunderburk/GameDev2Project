@@ -23,7 +23,7 @@ namespace AP
 				targets.Add (anim.GetBoneTransform (h_bones [i]));
 			}
 
-			//EnemyManager.singleton.enemyTargets.Add (this);
+//			EnemyManager.singleton.enemyTargets.Add (this);
 		}
 
 		public Transform GetTarget(bool negative = false)

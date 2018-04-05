@@ -4,12 +4,14 @@ using UnityEngine;
 
 namespace AP
 {
+	//at 40 minutes part 38
 	public class AnimatorHook : MonoBehaviour
 	{
 		Animator anim;
 		StateManager states;
 		EnemyStates eStates;
 		Rigidbody myBody;
+
 	
 
 
@@ -113,7 +115,9 @@ namespace AP
 			if (states == null)
 				return;
 			
-			states.w_hook.OpenDamageColliders (); //this is different because he has an inventory to manage and pulls weapons from that
+			states.ls_hook.OpenDamageColliders (); //this is different because he has an inventory to manage and pulls weapons from that
+			states.g_hook.OpenDamageColliders ();
+			states.d_hook.OpenDamageColliders ();
 		}
 
 		public void CloseDamageColliders()
@@ -121,7 +125,9 @@ namespace AP
 			if (states == null)
 				return;
 			
-			states.w_hook.CloseDamageColliders ();
+			states.ls_hook.CloseDamageColliders ();
+			states.g_hook.OpenDamageColliders ();
+			states.d_hook.OpenDamageColliders ();
 		}
 
 	}
