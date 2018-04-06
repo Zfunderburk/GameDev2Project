@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace AP
 {
+
+    //part 38 time 118 is doing rotation on attacks for the enemy will add if the enemy gets fixed
 	public class AIHandler : MonoBehaviour 
 	{
 		public AIAttacks[] ai_attacks;
@@ -23,6 +25,9 @@ namespace AP
 		float angle;
 		float delta;
 		Vector3 dirToTarget;
+
+        //public int attackCount = 30; // he has this set to 30
+        //int _attack;
 
 		float distanceFromTarget()
 		{
@@ -68,7 +73,8 @@ namespace AP
 			angle = angleToTarget ();
 			if (target)
 				dirToTarget = target.position - transform.position;
-			
+
+            RaycastToTarget();
 			switch (aiState) 
 			{
 			case AIstate.far:
@@ -78,18 +84,19 @@ namespace AP
 				HandleCloseSight ();
 				break;
 			case AIstate.inSight:
-				inSight ();
+				InSight ();
 				break;
 			case AIstate.attacking:
 				if(estates.canMove)
 				{
 					aiState = AIstate.inSight;
+                    //estates.agent.enabled = true;
 				}
 				break;
 
 			}
-			estates.Tick ();
-	
+            estates.Tick (delta);
+          
 		}
 
 
@@ -109,8 +116,34 @@ namespace AP
 			}
 			RaycastToTarget ();
 		}
-		void inSight()
+
+        void GoToTarget()
+        {
+            estates.hasDestination = false;
+            estates.SetDestination(target.position);
+        }
+		void InSight()
 		{
+            LookTowardsTarget();
+           // HandelCooldowns();
+
+            //if(_attack > 0)
+            //{
+            //    _attack--;
+            //    return;
+            //}
+            //_attack = attackCount;
+
+            float d2 = Vector3.Distance(estates.targetDestination, target.position);
+            if (d2 > 2 || dis > sight * .5)
+            {
+                GoToTarget();
+            }
+            if (dis < 2)
+            {
+                estates.agent.isStopped = true;
+            }
+
 			AIAttacks attack = WillAttack ();
 			if (attack != null)
 			{
@@ -119,20 +152,40 @@ namespace AP
 				estates.anim.Play(attack.targetAnim);
 				estates.anim.SetBool ("canMove", false); //I NEED TO DO HIS STATICSTRINGS CLASS
 				estates.canMove = false;
+                attack._cool = attack.coolDown;
+                estates.agent.isStopped = true;
+               // estates.agent.enabled = false;
 				return;
 			}
 
-			float d2 = Vector3.Distance (estates.targetDestination, target.position);
-			if(d2 > 2)
-			{
-				estates.SetDestination (target.position);
-			}
-			if (dis< 2)
-			{
-				estates.agent.isStopped = true;
-			}
+		
 		}
 	
+
+        //void HandelCooldowns()
+        //{
+        //    for (int i = 0; i < ai_attacks.Length; i++)
+        //    {
+        //        AIAttacks a = ai_attacks[i];
+        //        if (a._cool > 0)
+        //        {
+        //            continue;
+        //        }
+        //    }
+        //}
+
+        public void LookTowardsTarget()
+        {
+            
+            Vector3 dir = dirToTarget;
+            dir.y = 0;
+            if(dir == Vector3.zero)
+            {
+                dir = transform.forward;
+            }
+            Quaternion targetRotation = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, delta * 5);
+        }
 
 		public AIAttacks WillAttack()
 		{
@@ -150,11 +203,11 @@ namespace AP
 					
 				}
 
-				if (a.minDistance > dis)
+                if (dis > a.minDistance)
 					continue;
-				if (a.minAngle < fov_angle)
+                if (angle < a.minAngle)
 					continue;
-				if (a.maxAngle > fov_angle)
+                if (angle > a.maxAngle)
 					continue;
 				if (a.weight == 0)
 					continue;
@@ -191,7 +244,9 @@ namespace AP
 				StateManager st = hit.transform.GetComponentInParent<StateManager> ();
 				if (st!= null)
 				{
+                    estates.anim.SetBool("lockon", true);
 					aiState = AIstate.inSight;
+                    estates.SetDestination(target.position);
 				}
 			}
 		}
@@ -216,8 +271,12 @@ namespace AP
 					
 			}
 		}
+       
+
 	}
 
+
+  
 
 
 	[System.Serializable]

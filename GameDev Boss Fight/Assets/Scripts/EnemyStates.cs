@@ -19,7 +19,12 @@ namespace AP
 		EnemyTarget enTarget;
 		AnimatorHook a_hook;
 		public Rigidbody myBody;
-		public float delta;
+	
+
+        [Header("Values")]
+        public float delta;
+        public float horizontal;
+        public float vertical;
 
 
 		public LayerMask ignoreLayers;
@@ -31,6 +36,8 @@ namespace AP
 			enTarget.Init (anim);
 
 			myBody = GetComponent<Rigidbody> ();
+            agent = GetComponent<NavMeshAgent>();
+            myBody.isKinematic = true;
 
 			a_hook = anim.GetComponent < AnimatorHook> ();
 			if (a_hook == null)
@@ -42,9 +49,9 @@ namespace AP
 			ignoreLayers = ~(1 << 9);
 		}
 
-		public void Tick()
+		public void Tick(float d)
 		{
-			delta = Time.deltaTime;
+			delta = d;
 			canMove = anim.GetBool ("canMove");
 
 			if(isInvincible)
@@ -55,9 +62,29 @@ namespace AP
 			if(canMove)
 			{
 				anim.applyRootMotion = false;
+
+                MovementAnimation();
 			}
+            else
+            {
+                if (anim.applyRootMotion=false)
+                    anim.applyRootMotion = true;
+            }
 		
 		}
+
+        public void MovementAnimation()
+        {
+            Vector3 desiredVel = agent.desiredVelocity;
+            Vector3 relative = transform.InverseTransformDirection(desiredVel);
+
+            float v = relative.z;
+            float h = relative.x;
+
+            anim.SetFloat("Horizontal", h, 0.2f, delta);
+            anim.SetFloat("Vertical", v, 0.2f, delta);
+
+        }
 
 		public void SetDestination(Vector3 d)
 		{
