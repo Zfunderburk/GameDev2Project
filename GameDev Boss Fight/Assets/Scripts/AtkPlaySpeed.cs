@@ -5,18 +5,12 @@ using UnityEngine;
 public class AtkPlaySpeed : MonoBehaviour 
 {
 	public Animator anim;
-	public Animation atk;
 
-	public float atkSpeed;
-
-	void Start () 
-	{
-		anim = GetComponent<Animation>();
-	}
+	public float atkSpeed = 1f;
 
 	void Update ()
 	{
-		atk["oh_attack_1"].speed = atkSpeed;
+		anim.SetFloat("attackSpeed", atkSpeed);
 	}
 
 

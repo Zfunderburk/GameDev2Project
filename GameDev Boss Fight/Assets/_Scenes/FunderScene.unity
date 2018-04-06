@@ -1406,8 +1406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1336431317}
-  atk: {fileID: 0}
-  atkSpeed: 2
+  atkSpeed: 1
 --- !u!1001 &359685079
 Prefab:
   m_ObjectHideFlags: 0
@@ -1729,10 +1728,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.9452079
       objectReference: {fileID: 0}
+    - target: {fileID: 95820838754843172, guid: 5a0b816eddfc844178b78002f3dc0915,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 65656348349782828, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
     - {fileID: 114748920057956148, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
     - {fileID: 65243792947408244, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
+    - {fileID: 114236934969413654, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &458079791
@@ -3597,6 +3602,22 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224912942813034190, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
     type: 2}
   m_PrefabInternal: {fileID: 1249729850}
+--- !u!1 &1260891068 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: a8574cdb1e2bc40bc84c3d5911e2477f, type: 3}
+  m_PrefabInternal: {fileID: 33671522}
+--- !u!65 &1260891071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1260891068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.1307726, z: 0.38996306}
+  m_Center: {x: -1.05825226e-16, y: 1.066833, z: 0.023803204}
 --- !u!1 &1296021662
 GameObject:
   m_ObjectHideFlags: 0
@@ -4724,10 +4745,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0452667
       objectReference: {fileID: 0}
+    - target: {fileID: 95820838754843172, guid: 5a0b816eddfc844178b78002f3dc0915,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 65656348349782828, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
     - {fileID: 114748920057956148, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
     - {fileID: 65243792947408244, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
+    - {fileID: 114236934969413654, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1396693660
@@ -5090,7 +5117,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-21134
+  m_Name: pb_Mesh-415162
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

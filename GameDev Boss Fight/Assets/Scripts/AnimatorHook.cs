@@ -21,6 +21,9 @@ namespace AP
 		float delta;
 		AnimationCurve roll_curve;
 
+
+
+
 		public void Init(StateManager st, EnemyStates eSt)
 		{
 			states = st;
