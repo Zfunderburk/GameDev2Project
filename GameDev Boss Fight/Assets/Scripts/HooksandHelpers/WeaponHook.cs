@@ -7,8 +7,9 @@ namespace AP
 
 	public class WeaponHook : MonoBehaviour 
 	{
-		public GameObject[] damageCollider;
+		//public GameObject[] damageCollider;
 		public Collider [] damColliders;
+
 
 		public void OpenDamageColliders()
 		{

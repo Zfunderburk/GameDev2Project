@@ -107,6 +107,7 @@ namespace AP
 		{
 			if (isInvincible)
 				return;
+            
             currentHealth -= damageHealth;
 			isInvincible = true;
 			anim.Play ("damage_1");
