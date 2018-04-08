@@ -93,7 +93,26 @@ namespace AP
 				delta2.y = 0;											//no changing delta y
 				Vector3 v = (delta2 * rm_multi) / delta;
 				myBody.velocity = v;
+
+                if (states)
+                {
+                    if (!states.onGround)
+                    {
+                        v.y = myBody.velocity.y;
+                    }
+                }
+                //myBody.velocity = v;
+
+                if(eStates)
+                {
+                    eStates.agent.velocity = v;
+                }
+                else
+                {
+                    myBody.velocity = v;
+                }
 			}
+
 			else
 			{
 				roll_t += delta / 0.6f;
