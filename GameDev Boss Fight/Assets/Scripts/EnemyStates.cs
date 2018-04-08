@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 namespace AP
 {
 	public class EnemyStates : MonoBehaviour
 	{
-		public float health;
+		public float startHealth;
+        public float currentHealth;
 		public bool isInvincible;
 		public bool canMove;
 		public bool hasDestination;
 		public Vector3 targetDestination;
+
+        public Slider healthSLider;
+        public Image fill;
 
 		public NavMeshAgent agent;
 
@@ -47,6 +52,7 @@ namespace AP
 			a_hook.Init (null, this);
 
 			ignoreLayers = ~(1 << 9);
+            currentHealth = startHealth;
 		}
 
 		public void Tick(float d)
@@ -97,11 +103,11 @@ namespace AP
 			}
 		}
 
-		public void DoDamage(float v)
+		public void DoDamage(float damageHealth)
 		{
 			if (isInvincible)
 				return;
-			health -= v;
+            currentHealth -= damageHealth;
 			isInvincible = true;
 			anim.Play ("damage_1");
 			anim.applyRootMotion = true;
