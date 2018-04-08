@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.57482487, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -247,22 +247,22 @@ Prefab:
     - target: {fileID: 224978242513835222, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224978242513835222, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224675483470878010, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224675483470878010, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f82781a8307a4c03ae410454f8471ac, type: 2}
@@ -758,7 +758,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.04526
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114236934969413654, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5a0b816eddfc844178b78002f3dc0915, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &442967255
@@ -1070,6 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageCollider:
   - {fileID: 298137257}
+  damColliders: []
 --- !u!1 &608444348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,6 +1638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageCollider:
   - {fileID: 290329217}
+  damColliders: []
 --- !u!1001 &823270585
 Prefab:
   m_ObjectHideFlags: 0
@@ -1918,6 +1921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageCollider:
   - {fileID: 702846823}
+  damColliders: []
 --- !u!1 &1188345603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2112,12 +2116,12 @@ Prefab:
     - target: {fileID: 224191384392041096, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224191384392041096, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72798a3e5f54a4317bca7fa139e1f1a9, type: 2}
@@ -2731,6 +2735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageCollider:
   - {fileID: 1419159305}
+  damColliders: []
 --- !u!4 &1478121793
 Transform:
   m_ObjectHideFlags: 0
