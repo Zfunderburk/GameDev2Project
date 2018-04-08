@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 namespace AP
 {
 	public class EnemyStates : MonoBehaviour
 	{
-		public float health;
+		public float startHealth;
+		public float currentHealth;
 		public bool isInvincible;
 		public bool canMove;
 		public bool hasDestination;
@@ -19,6 +21,9 @@ namespace AP
 		EnemyTarget enTarget;
 		AnimatorHook a_hook;
 		public Rigidbody myBody;
+
+		public Slider healthSlider;
+		public Image heatlhFill;
 	
 
         [Header("Values")]
@@ -28,6 +33,8 @@ namespace AP
 
 
 		public LayerMask ignoreLayers;
+
+
 
 		public void Init()
 		{
@@ -47,6 +54,8 @@ namespace AP
 			a_hook.Init (null, this);
 
 			ignoreLayers = ~(1 << 9);
+
+			currentHealth = startHealth;
 		}
 
 		public void Tick(float d)
@@ -97,11 +106,13 @@ namespace AP
 			}
 		}
 
-		public void DoDamage(float v)
+		public void DoDamage(float damageAmount)
 		{
 			if (isInvincible)
 				return;
-			health -= v;
+			currentHealth -= damageAmount;
+			healthSlider.value -= damageAmount;
+	
 			isInvincible = true;
 			anim.Play ("damage_1");
 			anim.applyRootMotion = true;
