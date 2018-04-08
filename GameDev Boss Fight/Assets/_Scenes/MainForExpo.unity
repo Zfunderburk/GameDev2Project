@@ -420,6 +420,36 @@ Prefab:
       propertyPath: Spawn
       value: 
       objectReference: {fileID: 5645454}
+    - target: {fileID: 65177443296415572, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.13742065
+      objectReference: {fileID: 0}
+    - target: {fileID: 65177443296415572, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0.05590141
+      objectReference: {fileID: 0}
+    - target: {fileID: 65177443296415572, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.3244934
+      objectReference: {fileID: 0}
+    - target: {fileID: 65177443296415572, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
+        type: 2}
+      propertyPath: m_Center.x
+      value: -0.0028760433
+      objectReference: {fileID: 0}
+    - target: {fileID: 65177443296415572, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.3128395
+      objectReference: {fileID: 0}
+    - target: {fileID: 65177443296415572, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
+        type: 2}
+      propertyPath: m_Center.z
+      value: -0.006029129
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db5ebedbebfb64a3d89443b3a50b3e8e, type: 2}
   m_IsPrefabParent: 0
