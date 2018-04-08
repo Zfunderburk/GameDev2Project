@@ -247,22 +247,22 @@ Prefab:
     - target: {fileID: 224978242513835222, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224978242513835222, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224675483470878010, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224675483470878010, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f82781a8307a4c03ae410454f8471ac, type: 2}
@@ -755,6 +755,24 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 442967255}
   m_Script: {fileID: 11500000, guid: 6e915e3ddb5c34319971dba928e11c76, type: 3}
+--- !u!1 &900776808 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1580563696480502, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 442967255}
+--- !u!114 &900776811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 900776808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d46d8f08d6d046f992899fb11b49b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rm_multi: 0
+  rolling: 0
 --- !u!114 &1190236670 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114151863265277806, guid: 3f82781a8307a4c03ae410454f8471ac,
@@ -861,12 +879,12 @@ Prefab:
     - target: {fileID: 224191384392041096, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224191384392041096, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72798a3e5f54a4317bca7fa139e1f1a9, type: 2}
@@ -1297,7 +1315,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1397544
+  m_Name: pb_Mesh-2064
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

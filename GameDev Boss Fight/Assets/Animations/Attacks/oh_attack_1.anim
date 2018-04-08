@@ -38770,14 +38770,15 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0.6666667
-    functionName: OpenColliders
+    functionName: OpenDamageColliders
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 9000000, guid: 2a3b133e93e5a41d48680d8d346dde91,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.1
-    functionName: CloseColliders
+    functionName: CloseDamageColliders
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
