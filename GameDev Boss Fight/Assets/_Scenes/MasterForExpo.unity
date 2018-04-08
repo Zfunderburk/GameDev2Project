@@ -112,7 +112,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: d8359e556cfd24e0a854568247abc47a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e609913c0511b457489d173e78bd6101, type: 2}
 --- !u!1 &5645453
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +587,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1711331179}
   enemyHealth: {fileID: 314082587}
-  canMove: 0
 --- !u!23 &92653483
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1269,20 +1268,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1796506226248578, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
     type: 2}
   m_PrefabInternal: {fileID: 1026326236}
---- !u!114 &284219489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 284219485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8966384edbc554e21ad47d0061d6e2d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 0
-  targets: []
-  h_bones: 
 --- !u!95 &284219490
 Animator:
   serializedVersion: 3
@@ -1300,19 +1285,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &284219491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 284219485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55685de1c42f4bc49a79d8943c359aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerPos: {fileID: 1373624545}
-  control: {fileID: 92653482}
 --- !u!223 &314082587 stripped
 Canvas:
   m_PrefabParentObject: {fileID: 223467522518978662, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
@@ -1896,6 +1868,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 473476969}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &480279690 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114816478265371690, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1336431316}
+  m_Script: {fileID: 11500000, guid: 6e915e3ddb5c34319971dba928e11c76, type: 3}
 --- !u!1 &502100771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2058,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1711331179}
   enemyHealth: {fileID: 314082587}
-  canMove: 0
 --- !u!1 &639034679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,12 +2394,6 @@ Animator:
   m_PrefabParentObject: {fileID: 95487646364571860, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
     type: 2}
   m_PrefabInternal: {fileID: 1026326236}
---- !u!114 &739916425 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114816478265371690, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1336431316}
-  m_Script: {fileID: 11500000, guid: 6e915e3ddb5c34319971dba928e11c76, type: 3}
 --- !u!1 &740060864
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,11 +4603,6 @@ Transform:
   m_Father: {fileID: 649865273}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1373624545 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4604408144714034, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1336431316}
 --- !u!1 &1373630146
 GameObject:
   m_ObjectHideFlags: 0
@@ -5128,7 +5094,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-274540
+  m_Name: pb_Mesh-35362
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -5668,7 +5634,7 @@ MonoBehaviour:
   canMove: 0
   hasDestination: 0
   targetDestination: {x: 0, y: 0, z: 0}
-  agent: {fileID: 0}
+  agent: {fileID: 1705800529}
   anim: {fileID: 736392514}
   myBody: {fileID: 1705800525}
   delta: 0
@@ -5708,12 +5674,12 @@ MonoBehaviour:
     coolDown: 2
     _cool: 0
     targetAnim: oh_attack_1
-  states: {fileID: 739916425}
+  states: {fileID: 480279690}
   estates: {fileID: 1705800527}
   target: {fileID: 1942953706}
   closeCount: 10
   frameCount: 30
-  sight: 10
+  sight: 20
   fov_angle: 35
   aiState: 0
 --- !u!195 &1705800529
@@ -5734,7 +5700,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &1711331179
