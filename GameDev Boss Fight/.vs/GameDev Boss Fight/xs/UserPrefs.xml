@@ -3,12 +3,12 @@
     <Files>
       <File FileName="Assets/Scripts/StateManager.cs" Line="206" Column="11" />
       <File FileName="Assets/Scripts/WeaponHook.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AnimatorHook.cs" Line="40" Column="10" />
+      <File FileName="Assets/Scripts/AnimatorHook.cs" Line="101" Column="19" />
       <File FileName="Assets/Scripts/InputHandler.cs" Line="32" Column="9" />
-      <File FileName="Assets/Scripts/EnemyStates.cs" Line="66" Column="37" />
+      <File FileName="Assets/Scripts/EnemyStates.cs" Line="74" Column="4" />
       <File FileName="Assets/Scripts/EnemyManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnemyTarget.cs" Line="26" Column="3" />
-      <File FileName="Assets/Scripts/AIHandler.cs" Line="137" Column="30" />
+      <File FileName="Assets/Scripts/AIHandler.cs" Line="8" Column="99" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
