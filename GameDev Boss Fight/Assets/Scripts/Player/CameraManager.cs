@@ -35,6 +35,8 @@ namespace AP
 
 		bool usedRightAxis;
 
+		public bool paused = false;
+
 		public void Init(StateManager st)
 		{
 			states = st;

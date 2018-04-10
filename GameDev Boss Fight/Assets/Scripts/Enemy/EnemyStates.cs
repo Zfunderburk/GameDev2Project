@@ -52,6 +52,7 @@ namespace AP
 			a_hook.Init (null, this);
 
 			ignoreLayers = ~(1 << 9);
+
             currentHealth = startHealth;
 		}
 
@@ -107,7 +108,7 @@ namespace AP
 		{
 			if (isInvincible)
 				return;
-            
+            healthSLider.value -= damageHealth;
             currentHealth -= damageHealth;
 			isInvincible = true;
 			anim.Play ("damage_1");

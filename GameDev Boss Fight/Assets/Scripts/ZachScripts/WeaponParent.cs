@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class WeaponParent : MonoBehaviour {
 
 
@@ -12,13 +14,16 @@ public class WeaponParent : MonoBehaviour {
 	public float rotateSpeed = 3.5f;
 
 	public bool dropWeapon;
+	bool y_input;
 
 
 	void Update ()
 	{
+		y_input = Input.GetButton("y_input");
+
 		transform.Rotate (new Vector3 (0, 30, 0) * (Time.deltaTime * rotateSpeed));
 
-		if (Input.GetKeyDown ("space"))
+		if (y_input)
 		{
 			dropWeapon = true;
 			Debug.Log ("Weapon Dropped");

@@ -247,22 +247,22 @@ Prefab:
     - target: {fileID: 224978242513835222, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224978242513835222, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224675483470878010, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224675483470878010, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f82781a8307a4c03ae410454f8471ac, type: 2}
@@ -1259,12 +1259,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &491855793 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114511834076208494, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1249729850}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &615812339 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4344546924366522, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
@@ -1423,12 +1417,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rm_multi: 0
   rolling: 0
---- !u!114 &932499915 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114444264306877200, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1249729850}
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &966201442 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1400875059930578, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
@@ -1440,6 +1428,22 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 966201442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f787fe7fae6449fb91edf32c62e970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1176863854 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1158021319738888, guid: a1a9a0f289ce64aed8417880b3ad14fb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1770448451}
+--- !u!114 &1176863855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176863854}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9f787fe7fae6449fb91edf32c62e970, type: 3}
@@ -1551,12 +1555,12 @@ Prefab:
     - target: {fileID: 224191384392041096, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224191384392041096, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72798a3e5f54a4317bca7fa139e1f1a9, type: 2}
@@ -1682,14 +1686,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab94e048fe044b2aad04dfdaab2ded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 100
+  startHealth: 0
   currentHealth: 0
   isInvincible: 0
   canMove: 0
   hasDestination: 0
   targetDestination: {x: 0, y: 0, z: 0}
-  healthSLider: {fileID: 932499915}
-  fill: {fileID: 491855793}
+  healthSLider: {fileID: 0}
+  fill: {fileID: 0}
   agent: {fileID: 0}
   anim: {fileID: 0}
   myBody: {fileID: 0}
