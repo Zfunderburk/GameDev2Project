@@ -7,9 +7,10 @@ namespace AP
 
 	public class DamageCollider : MonoBehaviour 
 	{
+        //public Collider swordColliderFromPlayer;
 		void OnTriggerEnter(Collider other)
 		{
-			EnemyStates eStates = other.transform.transform.GetComponentInParent<EnemyStates> ();
+            EnemyStates eStates = other.transform.transform.GetComponentInParent<EnemyStates> ();
 
 			if (eStates == null)
 			{

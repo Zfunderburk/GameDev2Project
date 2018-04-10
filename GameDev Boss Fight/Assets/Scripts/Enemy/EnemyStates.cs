@@ -15,7 +15,9 @@ namespace AP
 		public bool hasDestination;
 		public Vector3 targetDestination;
 
-        public Slider healthSLider;
+        public GameObject destroyOnDeath;
+
+        public Slider healthSlider;
         public Image fill;
 
 		public NavMeshAgent agent;
@@ -74,7 +76,7 @@ namespace AP
 			}
             else
             {
-                if (anim.applyRootMotion=false)
+                if (anim.applyRootMotion==false)
                     anim.applyRootMotion = true;
             }
 		
@@ -108,14 +110,18 @@ namespace AP
 		{
 			if (isInvincible)
 				return;
-            healthSLider.value -= damageHealth;
+            healthSlider.value -= damageHealth;
             currentHealth -= damageHealth;
 			isInvincible = true;
 			anim.Play ("damage_1");
 			anim.applyRootMotion = true;
 			anim.SetBool ("canMove", false);
+            //if (currentHealth <= 0)
+            //{
+            //    Destroy(destroyOnDeath);
+            //}
 		}
-
+      
 
 	}
 }

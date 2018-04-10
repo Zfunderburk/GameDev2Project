@@ -247,22 +247,22 @@ Prefab:
     - target: {fileID: 224978242513835222, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224978242513835222, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224675483470878010, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224675483470878010, guid: 3f82781a8307a4c03ae410454f8471ac,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f82781a8307a4c03ae410454f8471ac, type: 2}
@@ -318,6 +318,10 @@ MonoBehaviour:
   spawnPoint: {fileID: 1711331179}
   enemyHealth: {fileID: 314082587}
   canMove: 0
+  range: 0
+  minDistance: 1
+  speed: 3
+  Movement: {x: 0, y: 0, z: 0}
 --- !u!23 &92653483
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1357,6 +1361,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 368818300}
   m_Script: {fileID: 11500000, guid: 4f17cb57e313e47cfb180be2b630b885, type: 3}
+--- !u!114 &635731262 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114511834076208494, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1249729850}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &639034679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,6 +1546,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rm_multi: 0
   rolling: 0
+--- !u!114 &900776812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 900776808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758c5455843e04ee2b1ddb8ad3ddb699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon1: {fileID: 687885736}
+  weapon2: {fileID: 615812340}
+  weapon3: {fileID: 1429614368}
 --- !u!1 &966201442 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1400875059930578, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
@@ -1754,12 +1778,12 @@ Prefab:
     - target: {fileID: 224191384392041096, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224191384392041096, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72798a3e5f54a4317bca7fa139e1f1a9, type: 2}
@@ -1891,8 +1915,9 @@ MonoBehaviour:
   canMove: 0
   hasDestination: 0
   targetDestination: {x: 0, y: 0, z: 0}
-  healthSLider: {fileID: 0}
-  fill: {fileID: 0}
+  destroyOnDeath: {fileID: 0}
+  healthSlider: {fileID: 1986924738}
+  fill: {fileID: 635731262}
   agent: {fileID: 0}
   anim: {fileID: 0}
   myBody: {fileID: 0}
@@ -1956,21 +1981,21 @@ MonoBehaviour:
     maxAngle: 35
     coolDown: 2
     _cool: 0
-    targetAnim: oh_attack_2
+    targetAnim: boss_attack_2
   - weight: 15
     minDistance: 3
     minAngle: 0
     maxAngle: 35
     coolDown: 2
     _cool: 0
-    targetAnim: oh_attack_3
+    targetAnim: boss_attack_3
   - weight: 25
     minDistance: 3
     minAngle: 0
     maxAngle: 35
     coolDown: 2
     _cool: 0
-    targetAnim: oh_attack_1
+    targetAnim: boss_attack_1
   states: {fileID: 843559378}
   estates: {fileID: 1313745625}
   target: {fileID: 1942953706}
@@ -2521,7 +2546,8 @@ Prefab:
       propertyPath: Spawn
       value: 
       objectReference: {fileID: 1677366787}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114330938706029434, guid: a1a9a0f289ce64aed8417880b3ad14fb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a1a9a0f289ce64aed8417880b3ad14fb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1777232687 stripped
@@ -2550,7 +2576,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2064
+  m_Name: pb_Mesh-258942
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2873,6 +2899,18 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 06bfd1c7fbf1c456cb7dfa95151eb0f6, type: 2}
+    - target: {fileID: 4647946385634270, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.49999964
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647946385634270, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647946385634270, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
   m_IsPrefabParent: 0
@@ -2957,3 +2995,9 @@ Transform:
   m_PrefabParentObject: {fileID: 4879063774477194, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
     type: 2}
   m_PrefabInternal: {fileID: 442967255}
+--- !u!114 &1986924738 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114444264306877200, guid: 72798a3e5f54a4317bca7fa139e1f1a9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1249729850}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}

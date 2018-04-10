@@ -30729,22 +30729,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 0.4
-    functionName: OpenBossColliders
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 0.43333334
     functionName: OpenColliders
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.8
-    functionName: CloseBossColliders
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

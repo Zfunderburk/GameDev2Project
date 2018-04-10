@@ -1075,7 +1075,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: oh_attack_1
+  m_Name: boss_attack_1
   m_Speed: 1.3
   m_CycleOffset: 0
   m_Transitions:
@@ -1089,7 +1089,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b247f3dfd31ae40b58d265b6afef1f6b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7fc62ca22495a42169d00587940e64e9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1233,7 +1233,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: oh_attack_2
+  m_Name: boss_attack_2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1247,7 +1247,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: eb128824a199d4c24b86a4bd66acc1a3, type: 2}
+  m_Motion: {fileID: 7400000, guid: b5b441a2a59cd49409ae14001f88e619, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1362,7 +1362,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: oh_attack_3
+  m_Name: boss_attack_3
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1376,7 +1376,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 9e329296ba0d84577bba2740cfa404c8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 153333aef5db44f1498bc22b80626124, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
