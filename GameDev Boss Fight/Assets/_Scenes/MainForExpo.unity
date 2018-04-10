@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 92653485}
   - component: {fileID: 92653484}
   - component: {fileID: 92653483}
-  - component: {fileID: 92653482}
+  - component: {fileID: 92653486}
   m_Layer: 0
   m_Name: HealthSpawn
   m_TagString: Untagged
@@ -304,24 +304,6 @@ Transform:
   m_Father: {fileID: 1711331180}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &92653482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 92653480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a76e838b233054e28bac72d214352b58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1711331179}
-  enemyHealth: {fileID: 314082587}
-  canMove: 0
-  range: 0
-  minDistance: 1
-  speed: 3
-  Movement: {x: 0, y: 0, z: 0}
 --- !u!23 &92653483
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -375,6 +357,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 92653480}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &92653486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92653480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498acae0c7ca74fbba16e34ac03e3889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 92653480}
+  enemyHealth: {fileID: 314082587}
+  canMove: 0
 --- !u!114 &150045032 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114927679522730506, guid: 3f82781a8307a4c03ae410454f8471ac,
@@ -1460,6 +1456,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1871133627}
   m_Script: {fileID: 11500000, guid: 4f17cb57e313e47cfb180be2b630b885, type: 3}
+--- !u!65 &727575463 stripped
+BoxCollider:
+  m_PrefabParentObject: {fileID: 65632724733959136, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
+    type: 2}
+  m_PrefabInternal: {fileID: 1872502430}
 --- !u!1001 &823270585
 Prefab:
   m_ObjectHideFlags: 0
@@ -1560,6 +1561,35 @@ MonoBehaviour:
   weapon1: {fileID: 687885736}
   weapon2: {fileID: 615812340}
   weapon3: {fileID: 1429614368}
+--- !u!1 &924335629 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1486266834493536, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
+    type: 2}
+  m_PrefabInternal: {fileID: 1872502430}
+--- !u!114 &924335631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924335629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f17cb57e313e47cfb180be2b630b885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damColliders:
+  - {fileID: 727575463}
+--- !u!114 &924335632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924335629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f787fe7fae6449fb91edf32c62e970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966201442 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1400875059930578, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
@@ -2911,7 +2941,9 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114770007971151526, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
+    - {fileID: 114307431013871498, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1889925819
