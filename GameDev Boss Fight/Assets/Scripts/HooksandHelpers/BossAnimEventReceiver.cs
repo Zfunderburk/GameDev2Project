@@ -6,10 +6,11 @@ public class BossAnimEventReceiver : MonoBehaviour
 {
     public AP.WeaponHook weapon1;
 
-	//private void Start()
-	//{
- //       weapon1.damColliders[].enabled = false;
-	//}
+	private void Start()
+	{
+        weapon1.damColliders[0].enabled = false;
+        //Debug.Log(weapon1.damColliders[0]);
+	}
 
 	public void OpenBossColliders()
     {

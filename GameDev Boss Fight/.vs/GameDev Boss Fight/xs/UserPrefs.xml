@@ -3,8 +3,8 @@
     <Files>
       <File FileName="Assets/Scripts/HooksandHelpers/WeaponHook.cs" Line="14" Column="36" />
       <File FileName="Assets/Scripts/HooksandHelpers/AnimEventReceiver.cs" Line="2" Column="34" />
-      <File FileName="Assets/Scripts/HooksandHelpers/BossAnimEventReceiver.cs" Line="9" Column="1" />
-      <File FileName="Assets/Scripts/HooksandHelpers/DamageCollider.cs" Line="24" Column="2" />
+      <File FileName="Assets/Scripts/HooksandHelpers/BossAnimEventReceiver.cs" Line="12" Column="11" />
+      <File FileName="Assets/Scripts/HooksandHelpers/DamageCollider.cs" Line="14" Column="86" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

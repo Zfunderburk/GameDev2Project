@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acbcbc6b90874a3d8de72401436a8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon1: {fileID: 1429614368}
+  weapon1: {fileID: 924335631}
 --- !u!4 &687885734 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4126267683674074, guid: 99daa204cd4104f3896ad72563d5545d,
@@ -2940,6 +2940,10 @@ Prefab:
     - target: {fileID: 4647946385634270, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915768427100172, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
+      propertyPath: m_Name
+      value: DamageCol_GSBoss
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114770007971151526, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
