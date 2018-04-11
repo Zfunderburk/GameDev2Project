@@ -398,6 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f787fe7fae6449fb91edf32c62e970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordColliderFromPlayer: {fileID: 0}
+  handle: {fileID: 68942024}
 --- !u!1001 &368818300
 Prefab:
   m_ObjectHideFlags: 0
@@ -477,7 +479,8 @@ Prefab:
       propertyPath: m_Center.z
       value: -0.006029129
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114045311041685272, guid: db5ebedbebfb64a3d89443b3a50b3e8e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: db5ebedbebfb64a3d89443b3a50b3e8e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &442967255
@@ -1590,6 +1593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f787fe7fae6449fb91edf32c62e970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordColliderFromPlayer: {fileID: 0}
+  handle: {fileID: 68942024}
 --- !u!1 &966201442 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1400875059930578, guid: db5ebedbebfb64a3d89443b3a50b3e8e,
@@ -1606,6 +1611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f787fe7fae6449fb91edf32c62e970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordColliderFromPlayer: {fileID: 0}
+  handle: {fileID: 68942024}
 --- !u!1 &982252974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f787fe7fae6449fb91edf32c62e970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordColliderFromPlayer: {fileID: 0}
+  handle: {fileID: 68942024}
 --- !u!114 &1190236670 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114151863265277806, guid: 3f82781a8307a4c03ae410454f8471ac,
@@ -2576,8 +2585,14 @@ Prefab:
       propertyPath: Spawn
       value: 
       objectReference: {fileID: 1677366787}
+    - target: {fileID: 65716957933309298, guid: a1a9a0f289ce64aed8417880b3ad14fb,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114330938706029434, guid: a1a9a0f289ce64aed8417880b3ad14fb, type: 2}
+    - {fileID: 114020674441129568, guid: a1a9a0f289ce64aed8417880b3ad14fb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a1a9a0f289ce64aed8417880b3ad14fb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1777232687 stripped
@@ -2606,7 +2621,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-258942
+  m_Name: pb_Mesh-1946
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2882,7 +2897,8 @@ Prefab:
       propertyPath: Spawn
       value: 
       objectReference: {fileID: 1860574232}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114188577432547104, guid: 99daa204cd4104f3896ad72563d5545d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 99daa204cd4104f3896ad72563d5545d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1872502430
