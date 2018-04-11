@@ -4,8 +4,7 @@ using UnityEngine;
 
 namespace AP
 {
-    //Time first half on part 3
-
+    
     public class StateManager : MonoBehaviour
     {
         [Header("Input")]

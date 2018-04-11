@@ -8,6 +8,7 @@ namespace AP
 {
 	public class EnemyStates : MonoBehaviour
 	{
+        public static EnemyStates Instance { get; protected set; }
 		public float startHealth;
         public float currentHealth;
 		public bool isInvincible;
@@ -38,6 +39,12 @@ namespace AP
 
 		public void Init()
 		{
+            if (Instance != null) {
+                print("more than one enemy states script in scene");
+            } else {
+                Instance = this;
+
+            }
 			anim = GetComponentInChildren<Animator> ();
 			enTarget = GetComponent<EnemyTarget> ();
 			enTarget.Init (anim);
