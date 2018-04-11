@@ -112,6 +112,9 @@ namespace AP
 				return;
             healthSlider.value -= damageHealth;
             currentHealth -= damageHealth;
+
+			currentHealth = Mathf.Clamp(currentHealth, 0, startHealth);
+
 			isInvincible = true;
 			anim.Play ("damage_1");
 			anim.applyRootMotion = true;
