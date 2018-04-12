@@ -14,6 +14,8 @@ public class AnimEventReceiver : MonoBehaviour
 		weapon1.OpenDamageColliders ();
 		weapon2.OpenDamageColliders ();
 		weapon3.OpenDamageColliders ();
+        AP.EnemyStates.Instance.DoDamage(10);
+
 	}
 
 

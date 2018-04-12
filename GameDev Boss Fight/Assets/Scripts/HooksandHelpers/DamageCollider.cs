@@ -11,25 +11,28 @@ namespace AP
         public Collider swordColliderFromPlayer;
         public Collider swordEnemy;
         public GameObject handle;
+        //public AP.WeaponHook weapon1;
 		
-		void Update()
-		{
-            // swordColliderFromPlayer =the weapon that the player is holding collider ;
-            //swordColliderFromPlayer = handle.GetComponentInChildren<Collider>();
-            childrenColliders = handle.GetComponentsInChildren<Collider>();
-            swordColliderFromPlayer = childrenColliders[1];
-            //Debug.Log(childrenColliders[1]);
-           // Debug.Log(swordColliderFromPlayer);
+		//void Update()
+		//{
+  //          // swordColliderFromPlayer =the weapon that the player is holding collider ;
+  //          //swordColliderFromPlayer = handle.GetComponentInChildren<Collider>();
+  //          childrenColliders = handle.GetComponentsInChildren<Collider>();
+  //          swordColliderFromPlayer = childrenColliders[1];
+  //          //Debug.Log(childrenColliders[1]);
+  //         // Debug.Log(swordColliderFromPlayer);
 
-		}
+		//}
 
-        void OnTriggerEnter(Collider col)
+        public void OnTriggerEnter(Collider col)
 		{
-		   // Debug.Log(swordColliderFromPlayer);
+            // Debug.Log(swordColliderFromPlayer);
             //Debug.Log(col);
-			if(col.gameObject.transform.GetChild(0).GetComponent<BossAnimEventReceiver>()) // if it has this component do dmg to it
-		              EnemyStates.Instance.DoDamage (10);
-            
+            //if (col.gameObject.transform.GetChild(0).GetComponent<BossAnimEventReceiver>()) // if it has this component do dmg to it
+            //{
+            //    EnemyStates.Instance.DoDamage(10);
+            //    //weapon1.OpenDamageColliders();
+            //}
             //if (col.gameObject.GetComponent<PlayerHealth>())
 		              //PlayerHealth.Instance.TakeDamage(10);
 		}
