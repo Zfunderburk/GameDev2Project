@@ -18,6 +18,8 @@ namespace AP
 
 		public Animator anim;
 
+		bool b_input;
+
 		void Start () 
 		{
 			currentStamina = maxStamina;
@@ -28,11 +30,14 @@ namespace AP
 		{
 			CalculateStamina();
 			//Debug.Log (currentStamina);
+
+			b_input = Input.GetButton("b_input");
 		}
 
 		void CalculateStamina ()
 		{
-			if(Input.GetKey(KeyCode.LeftShift))
+
+			if(b_input)
 			{
 				staminaSlider.value -= lossSpeed * Time.deltaTime;
 				currentStamina -= lossSpeed * Time.deltaTime;
