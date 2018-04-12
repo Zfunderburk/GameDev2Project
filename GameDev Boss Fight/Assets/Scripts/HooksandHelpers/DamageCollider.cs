@@ -25,14 +25,21 @@ namespace AP
 
         void OnTriggerEnter(Collider col)
 		{
-		    Debug.Log(swordColliderFromPlayer);
-
+		   // Debug.Log(swordColliderFromPlayer);
+            //Debug.Log(col);
 			if(col.gameObject.transform.GetChild(0).GetComponent<BossAnimEventReceiver>()) // if it has this component do dmg to it
-		              EnemyStates.Instance.DoDamage (5);
+		              EnemyStates.Instance.DoDamage (20);
             
-            if (col.gameObject.GetComponent<PlayerHealth>())
-		              PlayerHealth.Instance.TakeDamage(10);
+            //if (col.gameObject.GetComponent<PlayerHealth>())
+		              //PlayerHealth.Instance.TakeDamage(10);
 		}
-		
+
+  //      void OnCollisionEnter(Collision collider)
+		//{
+  //          Debug.Log("we might be close");
+  //          if(collider.gameObject.tag == "enemyWeapon")
+  //              PlayerHealth.Instance.TakeDamage(10);
+		//}
+
 	}
 }

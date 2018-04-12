@@ -126,10 +126,10 @@ namespace AP
 			anim.Play ("damage_1");
 			anim.applyRootMotion = true;
 			anim.SetBool ("canMove", false);
-            //if (currentHealth <= 0)
-            //{
-            //    Destroy(destroyOnDeath);
-            //}
+            if (currentHealth <= 5)
+            {
+                Destroy(destroyOnDeath);
+            }
 		}
       
 

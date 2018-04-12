@@ -1279,12 +1279,31 @@ Prefab:
     - target: {fileID: 136538975452729174, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
         type: 2}
       propertyPath: m_Height
-      value: 1.5319638
+      value: 2.0740817
       objectReference: {fileID: 0}
     - target: {fileID: 136538975452729174, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
         type: 2}
       propertyPath: m_Center.y
-      value: 1.2659819
+      value: 1.1434084
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156802730251782, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 136538975452729174, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.59020895
+      objectReference: {fileID: 0}
+    - target: {fileID: 136538975452729174, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 0.04030484
+      objectReference: {fileID: 0}
+    - target: {fileID: 54236842540893170, guid: 68b49389735f34abfbf92d7d8bdfcd1f,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68b49389735f34abfbf92d7d8bdfcd1f, type: 2}
@@ -2018,7 +2037,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0.75
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1313745628
@@ -2697,6 +2716,18 @@ MonoBehaviour:
   healthSlider: {fileID: 1659843741}
   healthFill: {fileID: 150045032}
   damaged: 0
+--- !u!114 &1777232693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1777232687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ff3949aafa14e5e95e7e1794614383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordEnemy: {fileID: 727575463}
 --- !u!43 &1781886215
 Mesh:
   m_ObjectHideFlags: 0
@@ -3041,6 +3072,48 @@ Prefab:
     - target: {fileID: 1915768427100172, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
       propertyPath: m_Name
       value: DamageCol_GSBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 65632724733959136, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.9585167
+      objectReference: {fileID: 0}
+    - target: {fileID: 65632724733959136, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 4.3371243
+      objectReference: {fileID: 0}
+    - target: {fileID: 65632724733959136, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 0.009955458
+      objectReference: {fileID: 0}
+    - target: {fileID: 65632724733959136, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
+        type: 2}
+      propertyPath: m_Center.z
+      value: -0.039761648
+      objectReference: {fileID: 0}
+    - target: {fileID: 65632724733959136, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 1.6991804
+      objectReference: {fileID: 0}
+    - target: {fileID: 65632724733959136, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.30674443
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915768427100172, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
+      propertyPath: m_TagString
+      value: enemyWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486266834493536, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
+      propertyPath: m_TagString
+      value: enemyWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641715288601250, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}
+      propertyPath: m_TagString
+      value: enemyWeapon
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114770007971151526, guid: 6ebdeb316ce1947a2bfcf3cdfb2aed54, type: 2}

@@ -6,17 +6,25 @@ namespace AP
 {
     public class DamagePlayer : MonoBehaviour
     {
+        public Collider swordEnemy;
 
-        public Collider enemySword;
-        PlayerHealth pHealth;
-		void OnTriggerEnter(Collider other)
+        void OnCollisionEnter(Collision collision)
 		{
-            Debug.Log("we are in the trigger");
-           // PlayerHealth pHealth = enemySword.transform.GetComponentInParent<PlayerHealth>();
-
-            //if (pHealth == null)
-                //return;
-            pHealth.TakeDamage(5);
+            Debug.Log(collision.gameObject);
+            Debug.Log("we collided");
+            if (collision.gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetChild(0).GetChild(5).GetChild(0).GetChild(0).GetChild(0).tag == "enemyWeapon")
+            {
+                Debug.Log("in if");
+                PlayerHealth.Instance.TakeDamage(10);
+            }
 		}
+
+		//void OnTriggerEnter(Collider col)
+        //{
+        //    // Debug.Log(swordColliderFromPlayer);
+        //    Debug.Log(col);
+        //    if (col.gameObject.GetComponent<PlayerHealth>())
+        //        PlayerHealth.Instance.TakeDamage(10);
+        //}
 	}
 }
