@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 	public Slider healthSlider;
     public Image healthFill;
     Animator anim;
+    public GameObject objectToDestroy;
 
 	public bool damaged;
 
@@ -41,9 +42,9 @@ public class PlayerHealth : MonoBehaviour
 		healthSlider.value = currentHealth;
         //anim.Play("damage_2");
         //anim.applyRootMotion = true;
-		if (currentHealth <= 0)
+		if (currentHealth <= 3)
 		{
-			//Need to make a death function
+            Destroy(objectToDestroy);
 		}
 			
 	}
