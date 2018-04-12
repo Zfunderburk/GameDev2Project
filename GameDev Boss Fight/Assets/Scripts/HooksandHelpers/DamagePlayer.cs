@@ -15,7 +15,7 @@ namespace AP
             if (collision.gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetChild(0).GetChild(5).GetChild(0).GetChild(0).GetChild(0).tag == "enemyWeapon")
             {
                 Debug.Log("in if");
-                PlayerHealth.Instance.TakeDamage(10);
+                PlayerHealth.Instance.TakeDamage(7);
             }
 		}
 

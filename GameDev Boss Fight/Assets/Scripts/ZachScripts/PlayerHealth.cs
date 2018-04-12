@@ -39,8 +39,8 @@ public class PlayerHealth : MonoBehaviour
 		damaged = true;
 		currentHealth -= amount;
 		healthSlider.value = currentHealth;
-        anim.Play("damage_2");
-        anim.applyRootMotion = true;
+        //anim.Play("damage_2");
+        //anim.applyRootMotion = true;
 		if (currentHealth <= 0)
 		{
 			//Need to make a death function

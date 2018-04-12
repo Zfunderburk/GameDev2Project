@@ -26,7 +26,7 @@ namespace AP
 		float delta;
 		Vector3 dirToTarget;
 
-        //public int attackCount = 30; // he has this set to 30
+        //public int attackCount = 10; // he has this set to 30
         //int _attack;
 
 		float distanceFromTarget()
@@ -125,7 +125,7 @@ namespace AP
 		void InSight()
 		{
             LookTowardsTarget();
-           // HandelCooldowns();
+            //HandelCooldowns();
 
             //if(_attack > 0)
             //{

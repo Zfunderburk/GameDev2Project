@@ -28,7 +28,7 @@ namespace AP
 		   // Debug.Log(swordColliderFromPlayer);
             //Debug.Log(col);
 			if(col.gameObject.transform.GetChild(0).GetComponent<BossAnimEventReceiver>()) // if it has this component do dmg to it
-		              EnemyStates.Instance.DoDamage (20);
+		              EnemyStates.Instance.DoDamage (10);
             
             //if (col.gameObject.GetComponent<PlayerHealth>())
 		              //PlayerHealth.Instance.TakeDamage(10);
