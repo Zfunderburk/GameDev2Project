@@ -17,7 +17,7 @@ public class BossAnimEventReceiver : MonoBehaviour
 	public void OpenBossColliders()
     {
         weapon1.OpenDamageColliders();
-        PlayerHealth.Instance.TakeDamage(7);
+//      PlayerHealth.Instance.TakeDamage(7);
 
     }
 
