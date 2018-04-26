@@ -11,6 +11,8 @@ public class WeaponParent : MonoBehaviour {
 	public Transform Spawn;
 	public Transform weapon;
 
+	public GameObject bossBlock;
+
 	public float rotateSpeed = 3.5f;
 
 	public bool dropWeapon;
@@ -49,4 +51,5 @@ public class WeaponParent : MonoBehaviour {
 		transform.localRotation = Quaternion.identity;						//Sets Weapon to the local rotation of Hand
 		rotateSpeed = 0f;
 	}
+
 }

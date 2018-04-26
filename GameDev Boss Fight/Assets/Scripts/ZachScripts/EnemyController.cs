@@ -27,14 +27,16 @@ public class EnemyController : MonoBehaviour
 
 	}
 
-	void OnTriggerEnter (Collider other)
+	public void OnTriggerEnter (Collider other)
 	{
 		enemyHealth.enabled = true;
 		canMove = true;
+
+		if(other.gameObject.tag == "Player")
+		{
+			gameObject.GetComponent<WeaponParent>().enabled = false;
+		}
+			
 	}
 
-	void Update()
-	{
-		
-	}
 }
